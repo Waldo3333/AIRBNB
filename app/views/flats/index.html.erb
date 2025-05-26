@@ -1,0 +1,49 @@
+<h1 class="text-3xl font-bold mb-6">Find a Flat</h1>
+
+<div class="row">
+  <% @flats.each do |flat| %>
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm">
+        <div class="position-relative">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="card-img-top" alt="<%= flat.title %>">
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <h5 class="card-title mb-0"><%= flat.title %></h5>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <small>4.8</small>
+            </div>
+          </div>
+
+            <p class="location-text mb-2">
+                <i class="fas fa-map-marker-alt me-1"></i>
+                <%= flat.city %>
+            </p>
+
+            <p class="guest-info mb-3">
+                <i class="fas fa-users me-1"></i>
+                <%= flat.guest %> voyageur<%= 's' if flat.guest > 1 %> •
+                <i class="fas fa-bed me-1"></i>
+                <%= flat.bedroom %> chambre<%= 's' if flat.bedroom > 1 %>
+            </p>
+
+            <p class="card-text text-muted mb-3" style="font-size: 0.9rem;">
+                <%= truncate(flat.description, length: 80) %>
+            </p>
+
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <strong class="text-dark"><%= flat.price %>€</strong>
+                    <small class="text-muted">par nuit</small>
+                </div>
+                <%= link_to flat_path(flat), class: "btn btn-primary btn-sm px-3" do %>
+                    <i class="fas fa-eye me-1"></i>
+                    Voir plus
+                <% end %>
+            </div>
+        </div>
+    </div>
+    </div>
+  <% end %>
+</div>
