@@ -1,0 +1,10 @@
+<h1>Bookings#new</h1>
+<p>Find me in app/views/bookings/new.html.erb</p>
+
+ <%= simple_form_for @booking do |f| %>
+          <%= f.input :flat, default: 'cet appart' %>
+          <%= f.input :guest %>
+          <%= f.input :entry_date %>
+          <%= f.input :out_date %>
+          <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
