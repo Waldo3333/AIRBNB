@@ -1,0 +1,19 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Add a new flat</h3>
+        <%= simple_form_for @flat do |f| %>
+          <%= f.input :title, placeholder: 'flat ,home, etc...' %>
+          <%= f.input :price %>
+          <%= f.input :guest %>
+          <%= f.input :bedroom %>
+          <%= f.input :description %>
+          <%= f.input :address, placeholder: '36 quai des orfevres' %>
+          <%= f.input :city, placeholder: 'Paris' %>
+          <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

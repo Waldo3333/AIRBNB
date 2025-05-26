@@ -9,4 +9,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  delete "flats/:id", to: "flats#destroy"
+
+  resources :flats, only: [:new,:create, :edit ,:update]
+
+
 end
