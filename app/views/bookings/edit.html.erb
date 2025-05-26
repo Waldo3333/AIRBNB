@@ -1,17 +1,14 @@
 <h1>Bookings#update</h1>
-
 <p>Find me in app/views/bookings/update.html.erb</p>
-
 
 <%= form_with model: @booking do |f| %>
   <%= f.label :entry_date %>
   <%= f.text_field :entry_date %>
   <%= f.label :out_date %>
   <%= f.text_field :out_date %>
-  <%= f.label :guest %>
+    <%= f.label :guest %>
   <%= f.text_field :guest %>
   <%= f.submit %>
 <% end %>
 
 <p><%= link_to '< Back', bookings_path %></p>
-
