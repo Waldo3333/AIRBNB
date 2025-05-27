@@ -1,7 +1,9 @@
   class BookingsController < ApplicationController
 
-    def show
-    end
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
 
     def new
       @booking = Booking.new()
@@ -31,6 +33,11 @@
       @booking.destroy
       redirect_to bookings_path, status: :see_other
     end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
 
     private
 

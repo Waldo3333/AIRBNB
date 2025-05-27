@@ -1,3 +1,4 @@
+
 <div data-controller="booking-display">
   <div class="show-flat">
     <%= @flat.title %>
@@ -6,3 +7,11 @@
     <%= render "bookings/form", user: current_user, flat: @flat %>
 </div>
 </div>
+
+<h1> Delete flat</h1>
+
+   <%= link_to "Delete",
+    flat_path(@flat),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+

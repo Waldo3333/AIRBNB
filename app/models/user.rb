@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :flats, dependent: :destroy
+  has_many :bookings
 
 
   # Include default devise modules. Others available are:
