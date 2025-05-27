@@ -4,8 +4,8 @@
 <div class="new-booking">
   <%= simple_form_for [@flat, @booking] do |f| %>
             <%= f.input :guest, as: :integer %>
-            <%= f.input :entry_date %>
-            <%= f.input :out_date %>
+            <%= f.input :entry_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+            <%= f.input :out_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
             <%= f.submit class: 'btn btn-primary' %>
     <% end %>
 </div>
