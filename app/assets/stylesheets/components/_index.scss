@@ -3,16 +3,24 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+@import "search_bar";
 
 body {
   font-family: montserrat;
-  background-color: #f5f5f5; /* Gris très clair pour le fond */
-  padding: 20px;
-  color: #0b2752;
+  background-color: #001444; /* Gris très clair pour le fond */
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  color: #fffcbb;
 }
 
 .container {
   margin-top: 50px;
+}
+
+.d-flex {
+  flex-wrap: wrap;
+  gap: 155px;
 }
 
 .listings-container {
@@ -24,16 +32,15 @@ body {
 }
 
 .index-card {
-  background: #fffcbb;
+  background: #fec400;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px white;
   cursor: pointer;
   transition: transform 0.3s ease;
-  padding-top: 10px;
 }
 
-.listing-card:hover {
+.index-card:hover {
   transform: translateY(-5px); /* Soulève la card de 5px */
 }
 
@@ -63,14 +70,14 @@ body {
 }
 
 .location {
-  color: #222222;
+  color: #001444;
   font-weight: bold;
   font-size: 16px;
 }
 
 /* ========== TITRE ET DESCRIPTION ========== */
 .title {
-  color: #717171; /* Gris moyen */
+  color: #012271; /* Gris moyen */
   font-size: 15px;
   margin-bottom: 8px;
   line-height: 1.3; /* Espacement entre les lignes */
@@ -88,7 +95,7 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #717171;
+  color: #012271;
   font-size: 14px;
 }
 
@@ -99,7 +106,7 @@ body {
 
 /* Description du logement */
 .description {
-  color: #717171;
+  color: #012271;
   font-size: 14px;
   line-height: 1.4;
   margin-bottom: 10px;
@@ -119,14 +126,14 @@ body {
 
 /* Prix en gros */
 .price {
-  color: #222222;
+  color: #001444;
   font-weight: bold;
   font-size: 18px;
 }
 
 /* "par nuit" en plus petit */
 .period {
-  color: #717171;
+  color: #012271;
   font-size: 14px;
 }
 
@@ -145,7 +152,7 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 50%; /* Fait un cercle */
-  background: #ff385c; /* Rouge Airbnb */
+  background: #012271; /* Rouge Airbnb */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,7 +163,7 @@ body {
 
 /* Nom de l'hôte */
 .host-name {
-  color: #717171;
+  color: #012271;
   font-size: 13px;
 }
 
