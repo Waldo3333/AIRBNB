@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
 
   def show
+    @booking = Booking.find(params[:id])
   end
 
   def new
@@ -18,6 +19,10 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
   end
 
   def update
