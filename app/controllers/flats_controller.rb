@@ -1,5 +1,10 @@
 class FlatsController < ApplicationController
 
+  def index
+    @flats = Flat.all
+  end
+
+
   def new
     @flat = Flat.new
   end
@@ -12,6 +17,10 @@ class FlatsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+  
+  def show
+    @flat = Flat.find(params[:id])
   end
 
   def edit
@@ -27,8 +36,6 @@ class FlatsController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-
-
 
   def destroy
     @flat = Flat.find(params[:id])
