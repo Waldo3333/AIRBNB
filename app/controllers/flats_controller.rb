@@ -4,9 +4,12 @@ class FlatsController < ApplicationController
     @flats = Flat.all
   end
 
-
   def new
     @flat = Flat.new
+  end
+
+   def show
+    @flat = Flat.find(params[:id])
   end
 
   def create
@@ -17,10 +20,6 @@ class FlatsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-  
-  def show
-    @flat = Flat.find(params[:id])
   end
 
   def edit
@@ -39,9 +38,8 @@ class FlatsController < ApplicationController
 
   def destroy
     @flat = Flat.find(params[:id])
-    @flat.user = current_user
     @flat.destroy
-    redirect_to flat_path, status: :see_other
+    redirect_to flat_path(@flat), status: :see_other
   end
 
 
