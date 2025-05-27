@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboards/index'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -7,8 +8,10 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-
-  resources :flats, only: [:new, :show ,:create, :edit, :update, :destroy, :index]
-  resources :bookings
-
+  resources :flats, only: [:new, :show ,:create, :edit, :update, :destroy, :index] do
+    resources :bookings
+  end
+  resources :dashboards, only: [:index]
+  # Defines the root path route ("/")
+  # root "posts#index"
 end

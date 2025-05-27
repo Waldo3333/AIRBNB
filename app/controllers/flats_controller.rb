@@ -10,6 +10,7 @@ class FlatsController < ApplicationController
 
    def show
     @flat = Flat.find(params[:id])
+    @booking = Booking.new
   end
 
   def create
@@ -19,7 +20,7 @@ class FlatsController < ApplicationController
       redirect_to flat_path(@flat)
     else
       render :new, status: :unprocessable_entity
-    endg
+    end
   end
 
   def edit
