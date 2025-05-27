@@ -5,12 +5,12 @@
   <% @bookings_unconfirmed.each do |booking| %>
     <p>Réservation n°<strong><%= booking.id %></strong> du <strong><%= booking.entry_date %></strong> au <strong><%= booking.out_date %></strong> pour <strong><%= booking.guest %></strong> invité(s)</p>
     <%= link_to "Confimé", flat_booking_path(booking.flat, booking, booking: {confirmed: true}),
-          data: { turbo_method: :patch, turbo_confirm: "Confirmé cette réservation." } %>
+          data: { turbo_method: :patch, turbo_confirm: "Confirmer cette réservation." } %>
     <%= link_to "Delete", flat_booking_path(booking.flat, booking),
           data: { turbo_method: :delete, turbo_confirm: "Are you sure delete this book ?" } %>
   <% end %>
 
-<h1>Bookings confimés</h1>
+<h1>Bookings confirmés</h1>
   <% @bookings_confirmed.each do |booking| %>
     <p>Réservation n°<strong><%= booking.id %></strong> du <strong><%= booking.entry_date %></strong> au <strong><%= booking.out_date %></strong> pour <strong><%= booking.guest %></strong> invité(s)</p>
     <%= link_to "Delete", flat_booking_path(booking.flat, booking),
