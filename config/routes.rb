@@ -12,7 +12,6 @@ Rails.application.routes.draw do
 
   delete "flats/:id", to: "flats#destroy"
 
-  resources :flats, only: [:new,:create, :edit ,:update]
-
+  resources :flats, only: [:new, :create, :edit ,:update]
 
 end
