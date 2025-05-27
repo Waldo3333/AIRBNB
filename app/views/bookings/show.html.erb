@@ -1,8 +1,7 @@
-<%= @booking %>
+<h1>Detail Booking</h1>
 
-  <p><%= @booking.entry_date %></p>
-  <p><%= @booking.out_date %></p>
-  <p><%= @booking.guest %></p>
+  <p><strong>Date d'arriver : </strong><%= @booking.entry_date %></p>
+  <p><strong>Date de fin : </strong><%= @booking.out_date %></p>
+  <p><strong>Nombre de personne : </strong><%= @booking.guest %></p>
 
   <p><%= link_to '< Back', bookings_path %></p>
-</div>
