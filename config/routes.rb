@@ -9,20 +9,6 @@ Rails.application.routes.draw do
 
 
   resources :flats, only: [:new, :show ,:create, :edit, :update, :destroy, :index]
-  resources :booking
-
-
-  # Defines the root path route ("/")
-  # root "posts#index"
-
-  # delete "flats/:id", to: "flats#destroy"clear
-
-
+  resources :bookings
 
 end
-
-# pour debugger
-# créer route show
-# mettre action show
-# créer la vue
-# tester
