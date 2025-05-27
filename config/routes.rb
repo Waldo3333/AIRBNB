@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
 
-  resources :flats, only: [:new, :show ,:create, :edit, :update, :destroy]
+  resources :flats, only: [:new, :show ,:create, :edit, :update, :destroy, :index]
   resources :booking
 
 
