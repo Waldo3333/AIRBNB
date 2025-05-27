@@ -1,5 +1,5 @@
 
-<div class="flat-show-container" data-controller="booking-display">
+<div class="flat-show-container" data-controller="toggle">
   <div class="show-flat">
      <h1><%= @flat.title %></h1>
     <div class="show-flat-main-info">
@@ -14,11 +14,11 @@
       <p> <%= @flat.description %> </p>
     </div>
     <div class="show-flat-button">
-      <button>Reserver</button>
+      <button data-action="click->toggle#display">Reserver</button>
     </div>
   </div>
-  <div class="show-new-booking">
-    <div class="show-new-booking-content">
+  <div class="show-new-booking"><!-- ne pas toucher cette div -->
+    <div class="show-new-booking-content" data-toggle-target="toggElement">
       <%= render "bookings/form", user: current_user, flat: @flat %>
     </div>
   </div>
