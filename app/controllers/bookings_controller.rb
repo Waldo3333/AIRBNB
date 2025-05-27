@@ -25,13 +25,13 @@
     def update
       @booking = Booking.find(params[:id])
       @booking.update(booking_params)
-      redirect_to bookings_path
+      redirect_to dashboards_path
     end
 
-    def delete
+    def destroy
       @booking = Booking.find(params[:id])
       @booking.destroy
-      redirect_to bookings_path, status: :see_other
+      redirect_to flat_bookings_path, status: :see_other
     end
 
   def edit
@@ -42,7 +42,7 @@
     private
 
     def booking_params
-      params.require(:booking).permit(:entry_date, :out_date, :guest)
+      params.require(:booking).permit(:entry_date, :out_date, :guest, :confirmed)
     end
 
   end

@@ -17,7 +17,7 @@ class FlatsController < ApplicationController
     @flat = Flat.new(flat_params)
     @flat.user = current_user
     if @flat.save
-      redirect_to flat_path(@flat)
+      redirect_to dashboards_path()
     else
       render :new, status: :unprocessable_entity
     end
