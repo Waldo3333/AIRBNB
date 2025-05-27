@@ -1,0 +1,38 @@
+.flat-show-container {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 20px;
+}
+
+.show-flat {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 50vw;
+	height: 80vh;
+	padding: 20px 20px;
+	background-color: #fffcbb;
+	border-radius: 15px;
+}
+
+.show-flat-button {
+	display: flex;
+	justify-content: center;
+	button {
+		color: white;
+		padding: 10px 10px;
+		border: none;
+		border-radius: 15px;
+		background-color: $blue;
+	}
+}
+.show-new-booking {
+	width: 40vw;
+	height: 80vh;
+}
+.show-new-booking-content {
+	display: block;
+	padding: 20px 20px;
+	background-color: #fffcbb;
+	border-radius: 15px;
+}
