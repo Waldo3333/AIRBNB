@@ -1,17 +1,35 @@
 
-<div data-controller="booking-display">
+<div class="flat-show-container" data-controller="booking-display">
   <div class="show-flat">
-    <%= @flat.title %>
+     <h1><%= @flat.title %></h1>
+    <div class="show-flat-main-info">
+      <p> Ville:  <%= @flat.city %> </p>
+      <p> Prix par nuit:  <%= @flat.price %> € </p>
+      <p> Nombre de personnes:  <%= @flat.guest %> </p>
+    </div>
+
+    <div class="show-flat-description">
+      <h2>Description:</h2>
+      <p> Nombre de chambre:  <%= @flat.bedroom %> </p>
+      <p> <%= @flat.description %> </p>
+    </div>
+    <div class="show-flat-button">
+      <button>Reserver</button>
+    </div>
   </div>
-<div class="show-new-booking">
-    <%= render "bookings/form", user: current_user, flat: @flat %>
-</div>
+  <div class="show-new-booking">
+    <div class="show-new-booking-content">
+      <%= render "bookings/form", user: current_user, flat: @flat %>
+    </div>
+  </div>
 </div>
 
-<h1> Delete flat</h1>
+
+
+
+
 
    <%= link_to "Delete",
     flat_path(@flat),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %>
-
