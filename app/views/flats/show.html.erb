@@ -18,10 +18,8 @@
     </div>
   </div>
   <div class="show-new-booking"><!-- ne pas toucher cette div -->
-    <div class="show-new-booking-content" data-toggle-target="toggElement">
-
+    <div class="show-new-booking-content d-none" data-toggle-target="toggElement">
       <%= render "bookings/form", user: current_user, flat: @flat %>
     </div>
   </div>
 </div>
-
