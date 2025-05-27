@@ -1,0 +1,8 @@
+<div data-controller="booking-display">
+  <div class="show-flat">
+    <%= @flat.title %>
+  </div>
+<div class="show-new-booking">
+    <%= render "bookings/form", user: current_user, flat: @flat %>
+</div>
+</div>

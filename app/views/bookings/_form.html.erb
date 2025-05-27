@@ -1,0 +1,11 @@
+<h1>Bookings#new</h1>
+<p>Find me in app/views/bookings/new.html.erb</p>
+
+<div class="new-booking">
+  <%= simple_form_for [@flat, @booking] do |f| %>
+            <%= f.input :guest, as: :integer %>
+            <%= f.input :entry_date %>
+            <%= f.input :out_date %>
+            <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+</div>
