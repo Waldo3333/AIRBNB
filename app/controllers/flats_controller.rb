@@ -11,6 +11,7 @@ class FlatsController < ApplicationController
    def show
     @flat = Flat.find(params[:id])
     @booking = Booking.new
+
     @bookingatflat = Booking.where(flat: @flat, confirmed: true)
     @tableaudate = @bookingatflat.map do |book|
       {
@@ -18,6 +19,7 @@ class FlatsController < ApplicationController
         to: book.out_date
       }
     end
+
   end
 
   def create
