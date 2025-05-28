@@ -3,9 +3,9 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
-@import "search_bar";
 
 body {
+
   font-family: montserrat;
   background-color: #001444; /* Gris très clair pour le fond */
   padding-right: 20px;
@@ -35,76 +35,83 @@ body {
   gap: 155px;
 }
 
+
 .index-card {
-  background: #fec400;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 10px 10px white;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+	background: #fffcbb;
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: transform 0.3s ease;
+	padding-top: 10px;
 }
 
-.index-card:hover {
-  transform: translateY(-5px); /* Soulève la card de 5px */
+.listing-card:hover {
+	transform: translateY(-5px); /* Soulève la card de 5px */
 }
 
 .index-image {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
 }
 
 .index-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 15px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 15px;
 }
 
 .card-content {
-  padding: 15px;
+	padding: 15px;
 }
 
 .card-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 8px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 8px;
 }
 
 .location {
-  color: #001444;
-  font-weight: bold;
-  font-size: 16px;
+	color: #222222;
+	font-weight: bold;
+	font-size: 16px;
 }
 
 .title {
+
   color: #012271;
   font-size: 15px;
   margin-bottom: 8px;
   line-height: 1.3;
+
 }
 
 .details {
+
   display: flex;
   gap: 15px;
   margin-bottom: 10px;
+
 }
 
 .detail-item {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: #012271;
-  font-size: 14px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	color: #717171;
+	font-size: 14px;
 }
 
 .detail-item i {
-  font-size: 12px;
+	font-size: 12px;
 }
 
 .description {
+
   color: #012271;
   font-size: 14px;
   line-height: 1.4;
@@ -114,32 +121,37 @@ body {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+
 }
 
 .price-section {
+
   display: flex;
   align-items: baseline;
   gap: 5px;
+
 }
 
 .price {
-  color: #001444;
-  font-weight: bold;
-  font-size: 18px;
+	color: #222222;
+	font-weight: bold;
+	font-size: 18px;
 }
 
 .period {
-  color: #012271;
-  font-size: 14px;
+	color: #717171;
+	font-size: 14px;
 }
 
 .host-info {
+
   display: flex;
   align-items: center;
   gap: 8px;
   margin-top: 12px;
   padding-top: 12px;
   border-top: 1px solid #dddddd;
+
 }
 
 .host-avatar {
@@ -153,11 +165,12 @@ body {
   color: white;
   font-size: 12px;
   font-weight: bold;
+
 }
 
 .host-name {
-  color: #012271;
-  font-size: 13px;
+	color: #717171;
+	font-size: 13px;
 }
 
 @media (max-width: 768px) {
@@ -173,4 +186,5 @@ body {
   .card-image {
     height: 180px;
   }
+
 }
