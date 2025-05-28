@@ -7,7 +7,7 @@
 	justify-content: center;
 	margin-bottom: 40px;
 }
-
+/*---------------------------------------LES BOOKING----------*/
 .dashboard-booking-container {
 	display: flex;
 	margin: 10vh auto;
@@ -22,7 +22,7 @@
 	width: 40vw;
 	height: 40vh;
 	padding: 20px 20px;
-	background-color: #fffcbb;
+	background-color: rgb(255, 252, 187);
 	color: #222222;
 	border-radius: 15px;
 	overflow: scroll;
@@ -44,6 +44,10 @@
 		border-radius: 10px;
 		width: max-content;
 		height: max-content;
+		transition: ease-out 0.2s;
+	}
+	a:hover {
+		padding: 5px 10px;
 	}
 }
 /*---------------------------------------LES VISITES----------*/
@@ -51,16 +55,30 @@
 .dashboard-visit-container {
 	width: 90vw;
 	margin: auto;
+	a {
+		width: max-content;
+		height: max-content;
+		padding: 5px 15px;
+		background-color: $blue;
+		border-radius: 10px;
+		color: white;
+		text-decoration: none;
+		transition: ease-out 0.2s;
+	}
+
+	a:hover {
+		padding: 5px 10px;
+	}
 }
 
 .dashboard-visit-title {
-	text-align: center;
 	margin-bottom: 5vh;
 }
 
 .dashboard-visit-list-container {
 	display: flex;
 	gap: 30px;
+	margin-bottom: 20px;
 }
 
 .dashboard-visit-list {
@@ -74,8 +92,9 @@
 /*---------------------------------------LES BIENS----------*/
 
 .dashboard-user-flats-container {
+	width: 90vw;
+	margin: auto;
 	margin-top: 5vh;
-	text-align: center;
 	gap: 5vh;
 }
 
@@ -91,11 +110,11 @@
 }
 
 .dashboard-user-flats-list {
-	width: 50vw;
-	height: 50vh;
+	width: 25vw;
+	height: 35vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-end;
 	overflow: hidden;
 	text-wrap: wrap;
 	padding: 20px 20px;
@@ -103,4 +122,25 @@
 	color: #222222;
 	border-radius: 15px;
 	flex-shrink: 0;
+}
+
+/*---------------------------------------BOUTON FLAT NEW----------*/
+.dashboard-new-flat-button {
+	text-align: center;
+	align-items: center;
+	margin-bottom: 40px;
+	a {
+		width: max-content;
+		height: max-content;
+		padding: 20px 20px;
+		border-radius: 10px;
+		background-color: $blue;
+		color: white;
+		text-decoration: none;
+		transition: ease-out 0.2s;
+	}
+
+	a:hover {
+		padding: 17px 17px;
+	}
 }
