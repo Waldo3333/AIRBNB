@@ -1,26 +1,53 @@
+<div class="show-flat-container" data-controller="toggle">
+        <div class="show-flat-card">
+            <div class="show-flat-image-container">
+                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Appartement moderne" class="show-flat-image">
+                <div class="show-flat-price-badge">
+                    €89 <small>/ nuit</small>
+                </div>
+            </div>
 
-<div class="flat-show-container" data-controller="toggle">
-  <div class="show-flat">
-     <h1><%= @flat.title %></h1>
-    <div class="show-flat-main-info">
-      <p> Ville:  <%= @flat.city %> </p>
-      <p> Prix par nuit:  <%= @flat.price %> € </p>
-      <p> Nombre de personnes:  <%= @flat.guest %> </p>
-    </div>
+            <div class="show-flat-content">
+                <h1 class="show-flat-title"><%= @flat.title %></h1>
+                <div class="show-flat-location"><%= @flat.city %></div>
 
-    <div class="show-flat-description">
-      <h2>Description:</h2>
-      <p> Nombre de chambre:  <%= @flat.bedroom %> </p>
-      <p> <%= @flat.description %> </p>
-    </div>
-    <div class="show-flat-button">
-      <button data-action="click->toggle#display">Reserver</button>
-    </div>
-  </div>
+                <div class="show-flat-specs">
+                    <div class="show-flat-spec-item">
+                        <span class="show-flat-icon">👥</span>
+                        <span><%= @flat.guest %> voyageurs</span>
+                    </div>
+                    <div class="show-flat-spec-item">
+                        <span class="show-flat-icon">🛏️</span>
+                        <span><%= @flat.bedroom %> chambres</span>
+                    </div>
+                </div>
+
+                <div class="show-flat-description">
+                  <div class="description"><%= @flat.description %></div>
+                </div>
+
+                <!-- Emplacement pour la carte -->
+                <div class="show-flat-map-container">
+                </div>
+
+                <div class="show-flat-host-info">
+                    <div class="show-flat-host-avatar">M</div>
+                    <div class="show-flat-host-details">
+                        <h4>Hébergé par Marie</h4>
+                        <p>Hôte depuis 3 ans • Superhôte</p>
+                    </div>
+                    <div class="show-flat-button">
+                      <button data-action="click->toggle#display">Reserver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
   <div class="show-new-booking"><!-- ne pas toucher cette div -->
     <div class="show-new-booking-content d-none" data-toggle-target="toggElement">
 
       <%= render "bookings/form", user: current_user, flat: @flat %>
     </div>
   </div>
-</div>
