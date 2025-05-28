@@ -10,7 +10,9 @@ export default class extends Controller {
 
     flatpickr(this.element, {
       disable: this.datesValue,
-      dateFormat: "Y-m-d"
+      dateFormat: "Y-m-d",
+      minDate: "today",
+      // mode: "range"
     })
   }
 }
