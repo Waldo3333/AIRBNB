@@ -9,7 +9,9 @@
           <%= f.input :guest %>
           <%= f.input :bedroom %>
           <%= f.input :description %>
-          <%= f.input :address, placeholder: '36 quai des orfevres' %>
+          <%= f.input :address ,placeholder: '36 quai des orfevres', input_html: {data: {address_autocomplete_target: "address"}, class: "d-none" },
+          wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+          %>
           <%= f.input :city, placeholder: 'Paris' %>
           <%= f.submit class: 'btn btn-primary' %>
         <% end %>

@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+Booking.destroy_all
 Flat.destroy_all
 User.destroy_all
 
@@ -28,7 +28,7 @@ puts 'users crées'
 @flat.save
 @flat = Flat.new(title: "Maison Paris", price: 90, guest: 7, bedroom: 5, description:"superbe maison au centre de Paris avec un accès au metro en moins de 2 minutes à pied", address: "63 avenue des champs Elysées 75000 Paris", city:"Paris", user: users.sample)
 @flat.save
-@flat = Flat.new(title: "Appartement Lacanau", price: 60, guest: 3, bedroom: 2, description:"superbe appart à Lacanau Centre avec un accès à la plage en moins de 10 minutes à pied", address: "63 allée du port 33320 Lacanau", city:"Lacanau", user: users.sample)
+@flat = Flat.new(title: "Appartement Lacanau", price: 60, guest: 3, bedroom: 2, description:"superbe appart à Lacanau Centre avec un accès à la plage en moins de 10 minutes à pied", address: "63 All. du Vieux Port 33680 Lacanau", city:"Lacanau", user: users.sample)
 @flat.save
 end
 
