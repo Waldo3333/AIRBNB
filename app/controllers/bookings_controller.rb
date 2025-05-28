@@ -16,9 +16,9 @@
       @booking.flat = @flat # ca ca va bouger aussi
 
       if @booking.save
-        redirect_to flat_path(@flat)
+        redirect_to dashboards_path
       else
-        render "flats/show", flat: @flat ,status: :unprocessable_entity
+        render "flats/show", flat: @flat ,status: :unprocessable_entity 
       end
     end
 
