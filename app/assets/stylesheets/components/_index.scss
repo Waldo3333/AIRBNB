@@ -11,24 +11,28 @@ body {
   padding-right: 20px;
   padding-left: 20px;
   padding-bottom: 20px;
-  color: #fffcbb;
 }
 
-.container {
+.index-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.index-logo img {
+  max-width: 600px;
+  height: auto;
+}
+
+.index-container {
   margin-top: 50px;
+  overflow: hidden;
 }
 
 .d-flex {
   flex-wrap: wrap;
   gap: 155px;
-}
-
-.listings-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill minmax(300px, 1fr));
-  gap: 30px;
 }
 
 .index-card {
@@ -75,22 +79,19 @@ body {
   font-size: 16px;
 }
 
-/* ========== TITRE ET DESCRIPTION ========== */
 .title {
-  color: #012271; /* Gris moyen */
+  color: #012271;
   font-size: 15px;
   margin-bottom: 8px;
-  line-height: 1.3; /* Espacement entre les lignes */
+  line-height: 1.3;
 }
 
-/* Détails : voyageurs et chambres */
 .details {
   display: flex;
-  gap: 15px; /* Espace entre chaque détail */
+  gap: 15px;
   margin-bottom: 10px;
 }
 
-/* Chaque détail (voyageurs, chambres) */
 .detail-item {
   display: flex;
   align-items: center;
@@ -99,60 +100,53 @@ body {
   font-size: 14px;
 }
 
-/* Icônes des détails */
 .detail-item i {
   font-size: 12px;
 }
 
-/* Description du logement */
 .description {
   color: #012271;
   font-size: 14px;
   line-height: 1.4;
   margin-bottom: 10px;
-  /* Limite à 2 lignes maximum */
+
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* ========== PRIX ========== */
 .price-section {
   display: flex;
-  align-items: baseline; /* Aligne sur la ligne de base */
+  align-items: baseline;
   gap: 5px;
 }
 
-/* Prix en gros */
 .price {
   color: #001444;
   font-weight: bold;
   font-size: 18px;
 }
 
-/* "par nuit" en plus petit */
 .period {
   color: #012271;
   font-size: 14px;
 }
 
-/* ========== INFORMATIONS HÔTE ========== */
 .host-info {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-top: 12px;
   padding-top: 12px;
-  border-top: 1px solid #dddddd; /* Ligne de séparation */
+  border-top: 1px solid #dddddd;
 }
 
-/* Avatar de l'hôte (cercle avec initiale) */
 .host-avatar {
   width: 25px;
   height: 25px;
-  border-radius: 50%; /* Fait un cercle */
-  background: #012271; /* Rouge Airbnb */
+  border-radius: 50%;
+  background: #012271;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -161,17 +155,14 @@ body {
   font-weight: bold;
 }
 
-/* Nom de l'hôte */
 .host-name {
   color: #012271;
   font-size: 13px;
 }
 
-/* ========== RESPONSIVE (pour mobile) ========== */
-/* Quand l'écran fait moins de 768px de large */
 @media (max-width: 768px) {
   .listings-container {
-    grid-template-columns: 1fr; /* Une seule colonne */
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
@@ -180,6 +171,6 @@ body {
   }
 
   .card-image {
-    height: 180px; /* Image plus petite sur mobile */
+    height: 180px;
   }
 }
