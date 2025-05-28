@@ -29,3 +29,10 @@
     <p>Description : <strong><%= flat.description %></strong></p>
     <p>Address : <strong><%= flat.address %></strong></p>
   <% end %>
+
+<h1>My Booking</h1>
+    <% @mybookings.each do |booking| %>
+    <p>Réservation n°<strong><%= booking.id %></strong> du <strong><%= booking.entry_date %></strong> au <strong><%= booking.out_date %></strong> pour <strong><%= booking.guest %></strong> invité(s)</p>
+    <%= link_to "Delete", flat_booking_path(booking.flat, booking),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" } %>
+  <% end %>
