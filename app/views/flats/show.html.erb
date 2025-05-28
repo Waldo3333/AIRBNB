@@ -46,7 +46,7 @@
 
 
   <div class="show-new-booking"><!-- ne pas toucher cette div -->
-    <div class="show-new-booking-content d-none" data-toggle-target="toggElement">
+    <div class="show-new-booking-content <%= 'd-none' unless @booking.errors.any? %>" data-toggle-target="toggElement">
 
       <%= render "bookings/form", user: current_user, flat: @flat %>
     </div>
