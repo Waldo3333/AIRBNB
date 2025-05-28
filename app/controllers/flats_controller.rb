@@ -12,6 +12,14 @@ class FlatsController < ApplicationController
     @flat = Flat.find(params[:id])
     @booking = Booking.new
 
+    @bookingatflat = Booking.where(flat: @flat, confirmed: true)
+    @tableaudate = @bookingatflat.map do |book|
+      {
+        from: book.entry_date,
+        to: book.out_date
+      }
+    end
+
   end
 
   def create
@@ -22,6 +30,7 @@ class FlatsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+
   end
 
   def edit

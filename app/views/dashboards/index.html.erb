@@ -1,39 +1,94 @@
-<h1>Dashboards#index</h1>
-<p>Find me in app/views/dashboards/index.html.erb</p>
-
-<h1>Bookings en attente</h1>
-  <% @my_flats_bookings_unconfirmed.each do |booking| %>
-    <p>Réservation n°<strong><%= booking.id %></strong> du <strong><%= booking.entry_date %></strong> au <strong><%= booking.out_date %></strong> pour <strong><%= booking.guest %></strong> invité(s)</p>
-    <%= link_to "Confimé", flat_booking_path(booking.flat, booking, booking: {confirmed: true}),
-          data: { turbo_method: :patch, turbo_confirm: "Confirmé cette réservation." } %>
-    <%= link_to "Delete", flat_booking_path(booking.flat, booking),
-          data: { turbo_method: :delete, turbo_confirm: "Are you sure delete this book ?" } %>
-  <% end %>
-
-<h1>Bookings confimés</h1>
-  <% @my_flats_bookings_confirmed.each do |booking| %>
-    <p>Réservation n°<strong><%= booking.id %></strong> du <strong><%= booking.entry_date %></strong> au <strong><%= booking.out_date %></strong> pour <strong><%= booking.guest %></strong> invité(s)</p>
-    <%= link_to "Delete", flat_booking_path(booking.flat, booking),
-          data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" } %>
-  <% end %>
+<div class="dashboard-container">
+  <div class="dashboard-top">
+    <h1>Dashboards</h1>
+  </div>
 
 
-<h1>Flats</h1>
+  <div class="dashboard-visit-container">
+    <div class="dashboard-visit-title">
+      <h2> Vos futures visites</h2>
+    </div>
+    <div class="dashboard-visit-list-container">
 
-  <% @flats.each do |flat| %>
-    <p><strong><%= flat.title %></strong>  <%= link_to "Delete", flat_path(flat),
-                                                data: { turbo_method: :delete, turbo_confirm: "Are you sure delete this flat?" } %></p>
-    <p>Prix : <strong><%= flat.price %> €</strong></p>
-    <p>Nombre personne autorisé : <strong><%= flat.guest %></strong></p>
-    <p>Nombre chambre : <strong><%= flat.bedroom %></strong></p>
-    <p>Description : <strong><%= flat.description %></strong></p>
-    <p>Address : <strong><%= flat.address %></strong></p>
-  <% end %>
+      <% @user_bookings.each do |book| %>
+      <div class="dashboard-visit-list">
+        <p><%= book.flat.title %></p>
+        <p>Le <%= book.entry_date %></p>
+        <%= link_to flat_path(book.flat) do %>
+        voir lieu
+        <%end%>
+      </div>
+      <% end %>
 
-<h1> Vos futurs visites</h1>
+    </div>
+  </div>
 
-<ul>
-<% @user_bookings.each do |book| %>
-  <li><%= book.flat.title %></li>
-<% end %>
-</ul>
+
+  <div class="dashboard-booking-container">
+
+    <div class="dashboard-booking-waiting">
+      <div class="dashboard-booking-waiting-title">
+        <h2>Bookings en attente</h2>
+      </div>
+      <div class="dashboard-booking-content">
+        <% @my_flats_bookings_unconfirmed.each do |booking| %>
+          <div class="dashboard-waiting-booking-infos">
+            <p>Réservation pour</p>
+            <p><strong><%= booking.flat.title %></strong></p>
+            <p>du <strong><%= booking.entry_date %></strong> au <strong><%= booking.out_date %></strong></p>
+            <p>pour <strong><%= booking.guest %></strong> invité(s)</p>
+          </div>
+          <div class="dashboard-waiting-booking-infos-button">
+            <%= link_to "Confimer", flat_booking_path(booking.flat, booking, booking: {confirmed: true}),
+                  data: { turbo_method: :patch, turbo_confirm: "Confirmé cette réservation." } %>
+            <%= link_to "Delete", flat_booking_path(booking.flat, booking),
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure delete this book ?" } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+    <div class="dashboard-booking-waiting">
+      <div class="dashboard-booking-waiting-title">
+        <h2>Historique</h2>
+      </div>
+      <div class="dashboard-booking-content">
+        <% @my_flats_bookings_confirmed.each do |booking| %>
+        <div class="dashboard-waiting-booking-infos">
+            <p>Réservation pour</p>
+            <p><strong><%= booking.flat.title %></strong></p>
+            <p>du <strong><%= booking.entry_date %></strong> au <strong><%= booking.out_date %></strong></p>
+            <p>pour <strong><%= booking.guest %></strong> invité(s)</p>        </div>
+        <div class="dashboard-waiting-booking-infos-button">
+          <%= link_to "Delete", flat_booking_path(booking.flat, booking),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" } %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-user-flats-container">
+    <div class="dashboard-user-flats-title">
+      <h2>Mes biens</h2>
+    </div>
+    <div class="dashboard-user-flats-list-container">
+      <% @flats.each do |flat| %>
+      <div class="dashboard-user-flats-list">
+          <p><strong><%= flat.title %></strong>
+          <p>Prix : <strong><%= flat.price %> €</strong></p>
+          <p>Nombre personne autorisé : <strong><%= flat.guest %></strong></p>
+          <p>Nombre chambre : <strong><%= flat.bedroom %></strong></p>
+          <p>Description : <strong><%= flat.description %></strong></p>
+          <p>Address : <strong><%= flat.address %></strong></p>
+          <div class="dashboard-waiting-booking-infos-button">
+          <%= link_to "Delete", flat_path(flat),
+                                          data: { turbo_method: :delete, turbo_confirm: "Are you sure delete this flat?" } %>
+          </div></p>
+      </div>
+        <% end %>
+    </div>
+  </div>
+
+</div>
