@@ -1,0 +1,106 @@
+.dashboard-container {
+	color: white;
+}
+
+.dashboard-top {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 40px;
+}
+
+.dashboard-booking-container {
+	display: flex;
+	margin: 10vh auto;
+	width: 90vw;
+	justify-content: space-between;
+}
+
+.dashboard-booking-content {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	width: 40vw;
+	height: 40vh;
+	padding: 20px 20px;
+	background-color: #fffcbb;
+	color: #222222;
+	border-radius: 15px;
+	overflow: scroll;
+}
+
+.dashboard-waiting-booking-infos {
+	display: flex;
+	flex-direction: column;
+}
+
+.dashboard-waiting-booking-infos-button {
+	display: flex;
+	justify-content: space-around;
+	a {
+		padding: 10px 20px;
+		color: white;
+		text-decoration: none;
+		background-color: $blue;
+		border-radius: 10px;
+		width: max-content;
+		height: max-content;
+	}
+}
+/*---------------------------------------LES VISITES----------*/
+
+.dashboard-visit-container {
+	width: 90vw;
+	margin: auto;
+}
+
+.dashboard-visit-title {
+	text-align: center;
+	margin-bottom: 5vh;
+}
+
+.dashboard-visit-list-container {
+	display: flex;
+	gap: 30px;
+}
+
+.dashboard-visit-list {
+	border-radius: 10px;
+	padding: 20px 20px;
+	width: 25vw;
+	color: #222222;
+	background-color: #fffcbb;
+}
+
+/*---------------------------------------LES BIENS----------*/
+
+.dashboard-user-flats-container {
+	margin-top: 5vh;
+	text-align: center;
+	gap: 5vh;
+}
+
+.dashboard-user-flats-list-container {
+	width: 90vw;
+	margin: auto;
+	display: flex;
+	border-radius: 15px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+	gap: 30px;
+}
+
+.dashboard-user-flats-list {
+	width: 50vw;
+	height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+	text-wrap: wrap;
+	padding: 20px 20px;
+	background-color: #fffcbb;
+	color: #222222;
+	border-radius: 15px;
+	flex-shrink: 0;
+}
