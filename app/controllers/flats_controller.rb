@@ -2,6 +2,7 @@ class FlatsController < ApplicationController
 
   def index
     @flats = Flat.all
+    @city = params[:city]
     @flat = Flat.where(city: @city)
      # The `geocoded` scope filters only flats with coordinates
      @markers = @flats.geocoded.map do |flat|
