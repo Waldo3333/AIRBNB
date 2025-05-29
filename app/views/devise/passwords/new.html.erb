@@ -11,10 +11,12 @@
                   input_html: { autocomplete: "email" } %>
     </div>
 
+ <div class="liensdevise">
+  <div class="liensutiles"><%= render "devise/shared/links" %></div>
     <div class="form-actions">
       <%= f.button :submit, "Send me reset password instructions" %>
     </div>
   <% end %>
+</div>
 
-  <%= render "devise/shared/links" %>
 </div>

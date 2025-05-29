@@ -1,23 +1,59 @@
 .devise-log-container {
-	width: 40vw;
-	margin: auto;
-	color: $white;
+  width: 40vw;
+  margin: auto;
+  margin-top: 50px;
+  color: $text;
+  background: white;
+  border: 3px solid $darkblue;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding: 20px 20px;
+  box-shadow: 10px 10px $myorange;
 
-	h1 {
-		text-align: center;
-		margin: 50px 0px;
-	}
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5px;
+  }
 
-	input[type="submit"] {
-		/* styles ici */
-		color: $white;
-		padding: 5px 10px;
-		background-color: $blue;
-		margin-bottom: 10px;
-		transition: ease-out 0.2s;
-	}
+  .liensdevise {
+    display: flex;
+    justify-content: space-between;
+  }
 
-	input[type="submit"]:hover {
-		padding: 10px 15px;
-	}
+  .h2style {
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    color: $myorange;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 20px 0px;
+    font-weight: bold;
+  }
+
+  input[type="submit"] {
+    /* styles ici */
+    color: $text;
+    width: max-content;
+    height: max-content;
+    padding: 5px 20px;
+    border-radius: 10px;
+    background-color: $white;
+    color: $text;
+    border: 3px solid $myorange;
+    text-decoration: none;
+    transition: ease-out 0.2s;
+  }
+
+  input[type="submit"]:hover {
+    padding: 2px 17px;
+    box-shadow: 10px 10px $myorange;
+    border: 3px solid $myorange;
+  }
 }
