@@ -75,10 +75,10 @@
             <% @flats.each do |flat| %>
               <div class="dashboard-user-flats-list dashboard-boxshadow">
                 <div class="dashboard-user-flats-list-image">
-                   <div class="dashboard-user-flats-list-image">
-                        <% if flat.photo.attached? %>
+                    <div class="dashboard-user-flats-list-image">
+                      <% if flat.photo.attached? %>
                           <%= cl_image_tag flat.photo.key %>
-                        <% end %>
+                      <% end %>
                       </div>
                 </div>
                   <p><strong><%= flat.title %></strong></p>
