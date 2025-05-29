@@ -1,11 +1,15 @@
-<h1>Réservation</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<div class="show-new-booking-content <%= 'd-none' unless booking.errors.any? %>" data-toggle-target="toggElement">
+  <h1>Réservation</h1>
+  <p>Find me in app/views/bookings/new.html.erb</p>
 
-<div class="new-booking">
-  <%= simple_form_for [@flat, @booking] do |f| %>
-            <%= f.input :guest, as: :integer %>
-            <%= f.input :entry_date, as: :string, input_html: { data: { controller: "datepicker" , datepicker_dates_value: @tableaudate.to_json} } %>
-            <%= f.input :out_date, as: :string, input_html: { data: { controller: "datepicker" , datepicker_dates_value: @tableaudate.to_json} } %>
-            <%= f.submit class: 'btn btn-primary' %>
+  <div class="new-booking">
+    <%= simple_form_for [flat, booking] do |f| %>
+      <%= f.input :guest, label: "Nombre d'invité(e)s", as: :integer %>
+      <p>Choisissez vos dates</p>
+        <input type="text" id="date_range" class="form-control" data-controller="datepicker" data-datepicker-dates-value="<%= tableaudate.to_json %>">
+      <%= f.input :entry_date, as: :hidden %>
+      <%= f.input :out_date, as: :hidden %>
+      <%= f.submit class: 'btn btn-primary' %>
     <% end %>
+  </div>
 </div>
