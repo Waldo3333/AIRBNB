@@ -3,7 +3,7 @@
             <div class="show-flat-image-container">
                 <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Appartement moderne" class="show-flat-image">
                 <div class="show-flat-price-badge">
-                    €89 <small>/ nuit</small>
+                    <%=@flat.price %> <small>€ / nuit</small>
                 </div>
             </div>
 
@@ -36,9 +36,11 @@
                         <h4>Hébergé par Marie</h4>
                         <p>Hôte depuis 3 ans • Superhôte</p>
                     </div>
+                    <% unless @flat.user == current_user %>
                     <div class="show-flat-button">
-                      <button data-action="click->toggle#display">Reserver</button>
-                    </div>
+                       <button data-action="click->toggle#display">Réserver</button>
+                      </div>
+                    <% end %>
                 </div>
             </div>
         </div>
@@ -46,7 +48,7 @@
 
 
   <div class="show-new-booking"><!-- ne pas toucher cette div -->
-    <div class="show-new-booking-content d-none" data-toggle-target="toggElement">
+    <div class="show-new-booking-content <%= 'd-none' unless @booking.errors.any? %>" data-toggle-target="toggElement">
 
       <%= render "bookings/form", user: current_user, flat: @flat %>
     </div>

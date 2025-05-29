@@ -13,11 +13,13 @@
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 10px 10px #fec400;
 }
 
 .show-flat-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  box-shadow: 10px 10px #fec400;
 }
 
 .show-flat-image-container {
