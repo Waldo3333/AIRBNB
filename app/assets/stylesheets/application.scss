@@ -14,4 +14,21 @@
 @import "pages/index";
 @import "navbar";
 @import "booking/newbooking";
+@import "dashboard/dashboard";
 @import "pages/flats/show";
+@import "pages/flats/index";
+@import "devise/new";
+
+body {
+
+  font-family: montserrat;
+  background-color: $mywhite;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+
+}
+
+a {
+  text-decoration: none;
+}

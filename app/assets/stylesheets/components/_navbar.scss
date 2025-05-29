@@ -1,15 +1,30 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #001444;
+  background: $mywhite;
   margin-left: -20px;
   margin-right: -20px;
   color: #fec400;
 }
-
+.container-fluid {
+  padding: 0 5vw;
+}
+.nav-link {
+  color: #fec400;
+}
+.nav-link:hover {
+  color: #ffe89c;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-link-dashboard {
+	margin-left: 20px;
+	a {
+		text-decoration: none;
+	}
 }

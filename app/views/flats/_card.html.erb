@@ -1,0 +1,32 @@
+<%= link_to flat_path(flat) do %>
+<div class="index-card">
+  <div class="index-image">
+      <%= cl_image_tag flat.photo.key %>
+  </div>
+  <div class="card-content">
+      <div class="card-header">
+          <div class="location"><%= flat.title %></div>
+      </div>
+      <div class="title"><%= flat.city %></div>
+      <div class="details">
+          <div class="detail-item">
+              <i class="fas fa-user"></i>
+              <span><%= flat.guest %> voyageurs</span>
+          </div>
+          <div class="detail-item">
+              <i class="fas fa-bed"></i>
+              <span><%= flat.bedroom %> chambres</span>
+          </div>
+      </div>
+      <div class="description"><%= flat.description %></div>
+      <div class="price-section">
+          <span class="price"><%= flat.price %>€</span>
+          <span class="period">par nuit</span>
+      </div>
+      <div class="host-info">
+          <div class="host-avatar"><%= flat.user.username.first.upcase %></div>
+          <span class="host-name">Hébergé par <%= flat.user.username %></span>
+      </div>
+  </div>
+</div>
+<%end%>
