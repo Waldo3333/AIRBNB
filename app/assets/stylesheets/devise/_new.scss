@@ -1,0 +1,23 @@
+.devise-log-container {
+	width: 40vw;
+	margin: auto;
+	color: $white;
+
+	h1 {
+		text-align: center;
+		margin: 50px 0px;
+	}
+
+	input[type="submit"] {
+		/* styles ici */
+		color: $white;
+		padding: 5px 10px;
+		background-color: $blue;
+		margin-bottom: 10px;
+		transition: ease-out 0.2s;
+	}
+
+	input[type="submit"]:hover {
+		padding: 10px 15px;
+	}
+}
