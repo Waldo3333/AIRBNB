@@ -36,9 +36,11 @@
                         <h4>Hébergé par Marie</h4>
                         <p>Hôte depuis 3 ans • Superhôte</p>
                     </div>
+                    <% unless @flat.user == current_user %>
                     <div class="show-flat-button">
-                      <button data-action="click->toggle#display">Reserver</button>
-                    </div>
+                       <button data-action="click->toggle#display">Réserver</button>
+                      </div>
+                    <% end %>
                 </div>
             </div>
         </div>
