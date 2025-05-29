@@ -1,13 +1,16 @@
+
   <div class="index-logo">
     <%= image_tag("Airpnp1.jpg", alt: "logo") %>
   </div>
 
 <div class="index-map-flat-container">
   <div class="index-map-container"
+
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+
 
   <div class="index-container">
     <div class="flat-container">
@@ -16,6 +19,8 @@
         <%= render "card", flat: flat%>
       </div>
       <% end %>
+
     </div>
   </div>
 </div>
+
