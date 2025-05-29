@@ -19,10 +19,10 @@
 
 
     <div class="dashboard-visit-confirmed">
-      <p>Réservations validés</p>
+      <p>Réservations validés (<%= @user_bookings_confirmed.count  %>)</p>
     <div class="dashboard-visit-list-container">
       <% @user_bookings_confirmed.each do |book| %>
-      <div class="dashboard-visit-list">
+      <div class="dashboard-visit-list dashboard-boxshadow">
         <p><%= book.flat.title %></p>
         <p>Le <%= book.entry_date %></p>
         <p>Adresse : <%= book.flat.address %></p>
@@ -36,10 +36,10 @@
 <%# ------------------------------------------------------------------------------------------------- visites en attente  %>
 
     <div class="dashboard-visit-unconfirmed">
-      <p>Réservations en attende de validation</p>
+      <p>Réservations en attende de validation (<%= @user_bookings_unconfirmed.count  %>)</p>
     <div class="dashboard-visit-list-container">
       <% @user_bookings_unconfirmed.each do |book| %>
-      <div class="dashboard-visit-list">
+      <div class="dashboard-visit-list dashboard-boxshadow">
         <p><%= book.flat.title %></p>
         <p>Le <%= book.entry_date %></p>
         <p>Adresse : <%= book.flat.address %></p>
@@ -58,10 +58,10 @@
 
 <div class="dashboard-booking-waiting">
   <div class="dashboard-booking-waiting-title">
-    <h2>Bookings en attente</h2>
+    <h2>Bookings en attente (<%= @my_flats_bookings_unconfirmed.count  %>)</h2>
   </div>
 
-  <div class="dashboard-booking-content">
+  <div class="dashboard-booking-content dashboard-boxshadow">
     <% if @my_flats_bookings_unconfirmed.any? %>
       <% @my_flats_bookings_unconfirmed.each do |booking| %>
         <div class="dashboard-waiting-booking-infos">
@@ -69,6 +69,8 @@
           <p><strong><%= booking.flat.title %></strong></p>
           <p>du <strong><%= booking.entry_date %></strong> au <strong><%= booking.out_date %></strong></p>
           <p>pour <strong><%= booking.guest %></strong> invité(s)</p>
+          <p>par <strong><%= booking.user.username %></strong></p>
+
         </div>
 
         <div class="dashboard-waiting-booking-infos-button">
@@ -88,17 +90,18 @@
 
     <div class="dashboard-booking-waiting">
   <div class="dashboard-booking-waiting-title">
-    <h2>Historique</h2>
+    <h2>Historique (<%= @my_flats_bookings_confirmed.count  %>)</h2>
   </div>
 
-  <div class="dashboard-booking-content">
+  <div class="dashboard-booking-content dashboard-boxshadow">
     <% if @my_flats_bookings_confirmed.any? %>
       <% @my_flats_bookings_confirmed.each do |booking| %>
-        <div class="dashboard-waiting-booking-infos">
+        <div class="dashboard-waiting-booking-infos ">
           <p>Réservation pour</p>
           <p><strong><%= booking.flat.title %></strong></p>
           <p>du <strong><%= booking.entry_date %></strong> au <strong><%= booking.out_date %></strong></p>
           <p>pour <strong><%= booking.guest %></strong> invité(s)</p>
+          <p>par <strong><%= booking.user.username %></strong></p>
         </div>
 
         <div class="dashboard-waiting-booking-infos-button">
@@ -115,14 +118,13 @@
 <%# -------------------------------------------------------------------------------------------------MES BIENS %>
   <div class="dashboard-user-flats-container">
     <div class="dashboard-user-flats-title">
-      <h2>Mes biens</h2>
+      <h2>Mes biens (<%= @flats.count  %>)</h2>
     </div>
     <div class="dashboard-user-flats-list-container">
       <% @flats.each do |flat| %>
-      <div class="dashboard-user-flats-list">
+      <div class="dashboard-user-flats-list dashboard-boxshadow">
           <p><strong><%= flat.title %></strong>
           <p>Prix : <strong><%= flat.price %> €</strong></p>
-          <p>Address : <strong><%= flat.address %></strong></p>
           <div class="dashboard-waiting-booking-infos-button">
             <%= link_to "Voir", flat_path(flat)%>
             <%= link_to "Supprimer", flat_path(flat),

@@ -7,6 +7,11 @@
 	justify-content: center;
 	margin-bottom: 40px;
 }
+
+.dashboard-boxshadow {
+	box-shadow: 10px 10px $darkblue;
+}
+
 /*---------------------------------------LES BOOKING----------*/
 .dashboard-booking-container {
 	display: flex;
@@ -22,8 +27,8 @@
 	width: 40vw;
 	height: 40vh;
 	padding: 20px 20px;
-	background-color: rgb(255, 252, 187);
-	color: #222222;
+	background-color: $lightblue;
+	color: $text;
 	border-radius: 15px;
 	overflow: scroll;
 }
@@ -38,9 +43,9 @@
 	justify-content: space-around;
 	a {
 		padding: 10px 20px;
-		color: white;
+		color: $text;
 		text-decoration: none;
-		background-color: $blue;
+		background-color: $myorange;
 		border-radius: 10px;
 		width: max-content;
 		height: max-content;
@@ -59,9 +64,9 @@
 		width: max-content;
 		height: max-content;
 		padding: 5px 15px;
-		background-color: $blue;
+		background-color: $myorange;
 		border-radius: 10px;
-		color: white;
+		color: $text;
 		text-decoration: none;
 		transition: ease-out 0.2s;
 	}
@@ -85,8 +90,8 @@
 	border-radius: 10px;
 	padding: 20px 20px;
 	width: 25vw;
-	color: #222222;
-	background-color: #fffcbb;
+	color: $text;
+	background-color: $lightblue;
 }
 
 /*---------------------------------------LES BIENS----------*/
@@ -101,6 +106,7 @@
 .dashboard-user-flats-list-container {
 	width: 90vw;
 	margin: auto;
+	padding-bottom: 10px;
 	display: flex;
 	border-radius: 15px;
 	overflow-x: scroll;
@@ -114,12 +120,12 @@
 	height: 35vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
+	justify-content: center;
 	overflow: hidden;
 	text-wrap: wrap;
 	padding: 20px 20px;
-	background-color: #fffcbb;
-	color: #222222;
+	background-color: $lightblue;
+	color: $text;
 	border-radius: 15px;
 	flex-shrink: 0;
 }
@@ -134,10 +140,11 @@
 		height: max-content;
 		padding: 20px 20px;
 		border-radius: 10px;
-		background-color: $blue;
-		color: white;
+		background-color: $myorange;
+		color: $text;
 		text-decoration: none;
 		transition: ease-out 0.2s;
+		box-shadow: 10px 10px $darkblue;
 	}
 
 	a:hover {
