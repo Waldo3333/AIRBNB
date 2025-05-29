@@ -75,7 +75,11 @@
             <% @flats.each do |flat| %>
               <div class="dashboard-user-flats-list dashboard-boxshadow">
                 <div class="dashboard-user-flats-list-image">
-                    <%= cl_image_tag flat.photo.key %>
+                    <div class="dashboard-user-flats-list-image">
+                      <% if flat.photo.attached? %>
+                          <%= cl_image_tag flat.photo.key %>
+                      <% end %>
+                      </div>
                 </div>
                   <p><strong><%= flat.title %></strong></p>
                   <p>Prix : <strong><%= flat.price %> €</strong></p>
@@ -153,4 +157,3 @@
     </div>
   </div>
 </div>
-
