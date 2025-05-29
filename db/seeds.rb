@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+
 require 'open-uri'
 
 Flat.destroy_all
@@ -46,14 +47,9 @@ file = URI.parse('https://resize.elle.fr/original/var/plain_site/storage/images/
                   user: users.sample,
                   photo: "https://resize.elle.fr/original/var/plain_site/storage/images/deco/reportages/visites-maisons/un-appartement-de-75m2-aux-allures-douces-et-retro/97678096-1-fre-FR/Un-appartement-de-75m2-aux-allures-douces-et-retro.jpg")
 @flat.save
-@flat = Flat.new(title: "Appartement Lacanau",
-                  price: 60, guest: 3,
-                  bedroom: 2,
-                  description:"superbe appart à Lacanau Centre avec un accès à la plage en moins de 10 minutes à pied",
-                  address: "63 allée du port 33320 Lacanau",
-                  city:"Lacanau",
-                  user: users.sample,
-                  photo: "/home/irispradie/code/Irispradie/rails-watch-list/config/AIRBNB/app/assets/images/appart3.jpg")
+
+@flat = Flat.new(title: "Appartement Lacanau", price: 60, guest: 3, bedroom: 2, description:"superbe appart à Lacanau Centre avec un accès à la plage en moins de 10 minutes à pied", address: "63 All. du Vieux Port 33680 Lacanau", city:"Lacanau", user: users.sample)
+
 @flat.save
 =end
 

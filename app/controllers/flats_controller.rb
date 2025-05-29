@@ -2,13 +2,25 @@ class FlatsController < ApplicationController
 
   def index
     @flats = Flat.all
+    @city = params[:city]
+    @flat = Flat.where(city: @city)
+     # The `geocoded` scope filters only flats with coordinates
+     @markers = @flats.geocoded.map do |flat|
+
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {flat: flat})
+      }
+
+     end
   end
 
   def new
     @flat = Flat.new
   end
 
-   def show
+  def show
     @flat = Flat.find(params[:id])
     @booking = Booking.new
 
@@ -19,7 +31,6 @@ class FlatsController < ApplicationController
         to: book.out_date
       }
     end
-
   end
 
   def create

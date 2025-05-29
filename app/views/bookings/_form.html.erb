@@ -1,9 +1,15 @@
+<div class="show-new-booking-content <%= 'd-none' unless booking.errors.any? %>" data-toggle-target="toggElement">
+  <h2>Réservation</h2>
+  <p>Find me in app/views/bookings/new.html.erb</p>
 
-<h2>Réservation</h2>
-<div class="new-booking">
-  <%= simple_form_for [@flat, @booking] do |f| %>
-            <%= f.input :guest, as: :integer %>
-            <%= f.input :entry_date, as: :string, input_html: { data: { controller: "datepicker" , datepicker_dates_value: @tableaudate.to_json} } %>
-            <%= f.submit "Valider", class: 'btn btn-primary new-booking-button' %>
+  <div class="new-booking">
+    <%= simple_form_for [flat, booking] do |f| %>
+      <%= f.input :guest, label: "Nombre d'invité(e)s", as: :integer %>
+      <p>Choisissez vos dates</p>
+        <input type="text" id="date_range" class="form-control" data-controller="datepicker" data-datepicker-dates-value="<%= tableaudate.to_json %>">
+      <%= f.input :entry_date, as: :hidden %>
+      <%= f.input :out_date, as: :hidden %>
+      <%= f.submit "Valider", class: 'btn btn-primary new-booking-button' %>
     <% end %>
+  </div>
 </div>
