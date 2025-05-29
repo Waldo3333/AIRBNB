@@ -1,6 +1,5 @@
-<div class="show-new-booking-content <%= 'd-none' unless booking.errors.any? %>" data-toggle-target="toggElement">
+<div class="show-new-booking-content" data-toggle-target="toggElement">
   <h2>Réservation</h2>
-  <p>Find me in app/views/bookings/new.html.erb</p>
 
   <div class="new-booking">
     <%= simple_form_for [flat, booking] do |f| %>
