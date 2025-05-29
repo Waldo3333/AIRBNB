@@ -2,6 +2,17 @@ class FlatsController < ApplicationController
 
   def index
     @flats = Flat.all
+     # The `geocoded` scope filters only flats with coordinates
+     @markers = @flats.geocoded.map do |flat|
+
+      {
+        price: flat.price,
+        lat: flat.latitude,
+        lng: flat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {flat: flat})
+      }
+
+     end
   end
 
   def new
@@ -57,6 +68,6 @@ class FlatsController < ApplicationController
 
 
   def flat_params
-    params.require(:flat).permit(:title, :price, :guest, :bedroom, :description, :address, :city, :user)
+    params.require(:flat).permit(:title, :price, :guest, :bedroom, :description, :address, :city, :user, :photo)
   end
 end

@@ -1,146 +1,172 @@
 .dashboard-container {
-	color: white;
+  color: $text;
+}
+
+.dashboard-card {
+  display: flex;
+  background: white;
+  border: 3px solid #538fe4;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 10px 10px #fec400;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-title {
+  font-size: 50px;
+  font-weight: bold;
 }
 
 .dashboard-top {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
 }
+
+.dashboard-boxshadow {
+  box-shadow: 10px 10px $darkblue;
+}
+
 /*---------------------------------------LES BOOKING----------*/
 .dashboard-booking-container {
-	display: flex;
-	margin: 10vh auto;
-	width: 90vw;
-	justify-content: space-between;
+  display: flex;
+  margin: 10vh auto;
+  width: 90vw;
+  justify-content: space-between;
 }
 
 .dashboard-booking-content {
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-	width: 40vw;
-	height: 40vh;
-	padding: 20px 20px;
-	background-color: rgb(255, 252, 187);
-	color: #222222;
-	border-radius: 15px;
-	overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 40vw;
+  height: 40vh;
+  padding: 20px 20px;
+  background-color: $lightblue;
+  color: $text;
+  border-radius: 15px;
+  overflow: scroll;
 }
 
 .dashboard-waiting-booking-infos {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .dashboard-waiting-booking-infos-button {
-	display: flex;
-	justify-content: space-around;
-	a {
-		padding: 10px 20px;
-		color: white;
-		text-decoration: none;
-		background-color: $blue;
-		border-radius: 10px;
-		width: max-content;
-		height: max-content;
-		transition: ease-out 0.2s;
-	}
-	a:hover {
-		padding: 5px 10px;
-	}
+  display: flex;
+  justify-content: space-around;
+  a {
+    padding: 10px 20px;
+    color: $text;
+    text-decoration: none;
+    background-color: $myorange;
+    border-radius: 10px;
+    width: max-content;
+    height: max-content;
+    transition: ease-out 0.2s;
+  }
+  a:hover {
+    padding: 5px 10px;
+  }
 }
 /*---------------------------------------LES VISITES----------*/
 
 .dashboard-visit-container {
-	width: 90vw;
-	margin: auto;
-	a {
-		width: max-content;
-		height: max-content;
-		padding: 5px 15px;
-		background-color: $blue;
-		border-radius: 10px;
-		color: white;
-		text-decoration: none;
-		transition: ease-out 0.2s;
-	}
+  width: 90vw;
+  margin: auto;
+  a {
+    width: max-content;
+    height: max-content;
+    padding: 5px 15px;
+    background-color: $myorange;
+    border-radius: 10px;
+    color: $text;
+    text-decoration: none;
+    transition: ease-out 0.2s;
+  }
 
-	a:hover {
-		padding: 5px 10px;
-	}
+  a:hover {
+    padding: 5px 10px;
+  }
 }
 
 .dashboard-visit-title {
-	margin-bottom: 5vh;
+  margin-bottom: 5vh;
 }
 
 .dashboard-visit-list-container {
-	display: flex;
-	gap: 30px;
-	margin-bottom: 20px;
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
 }
 
 .dashboard-visit-list {
-	border-radius: 10px;
-	padding: 20px 20px;
-	width: 25vw;
-	color: #222222;
-	background-color: #fffcbb;
+  border-radius: 10px;
+  padding: 20px 20px;
+  width: 25vw;
+  color: $text;
+  background-color: $lightblue;
 }
 
 /*---------------------------------------LES BIENS----------*/
 
 .dashboard-user-flats-container {
-	width: 90vw;
-	margin: auto;
-	margin-top: 5vh;
-	gap: 5vh;
+  width: 90vw;
+  margin: auto;
+  margin-top: 5vh;
+  gap: 5vh;
 }
 
 .dashboard-user-flats-list-container {
-	width: 90vw;
-	margin: auto;
-	display: flex;
-	border-radius: 15px;
-	overflow-x: scroll;
-	overflow-y: hidden;
-	white-space: nowrap;
-	gap: 30px;
+  width: 90vw;
+  margin: auto;
+  padding-bottom: 10px;
+  display: flex;
+  border-radius: 15px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  gap: 30px;
 }
 
 .dashboard-user-flats-list {
-	width: 25vw;
-	height: 35vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	overflow: hidden;
-	text-wrap: wrap;
-	padding: 20px 20px;
-	background-color: #fffcbb;
-	color: #222222;
-	border-radius: 15px;
-	flex-shrink: 0;
+  width: 25vw;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  text-wrap: wrap;
+  padding: 20px 20px;
+  background-color: $lightblue;
+  color: $text;
+  border-radius: 15px;
+  flex-shrink: 0;
 }
 
 /*---------------------------------------BOUTON FLAT NEW----------*/
 .dashboard-new-flat-button {
-	text-align: center;
-	align-items: center;
-	margin-bottom: 40px;
-	a {
-		width: max-content;
-		height: max-content;
-		padding: 20px 20px;
-		border-radius: 10px;
-		background-color: $blue;
-		color: white;
-		text-decoration: none;
-		transition: ease-out 0.2s;
-	}
+  text-align: center;
+  align-items: center;
+  margin-bottom: 40px;
+  a {
+    width: max-content;
+    height: max-content;
+    padding: 20px 20px;
+    border-radius: 10px;
+    background-color: $myorange;
+    color: $text;
+    text-decoration: none;
+    transition: ease-out 0.2s;
+    box-shadow: 10px 10px $darkblue;
+  }
 
-	a:hover {
-		padding: 17px 17px;
-	}
+  a:hover {
+    padding: 17px 17px;
+  }
 }

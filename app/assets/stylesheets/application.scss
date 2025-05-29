@@ -6,6 +6,8 @@
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
+@import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
+@import url("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css");
 
 // Your CSS partials
 @import "components/index";
@@ -18,13 +20,15 @@
 @import "devise/new";
 
 body {
-	font-family: montserrat;
-	background-color: #001444;
-	padding-right: 20px;
-	padding-left: 20px;
-	padding-bottom: 20px;
+
+  font-family: montserrat;
+  background-color: $mywhite;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }

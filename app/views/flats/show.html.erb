@@ -1,5 +1,5 @@
 <div class="show-flat-container" data-controller="toggle">
-        <div class="show-flat-card">
+        <div class="show-flat-card" data-toggle-target="flatElement">
             <div class="show-flat-image-container">
                 <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Appartement moderne" class="show-flat-image">
                 <div class="show-flat-price-badge">
@@ -31,25 +31,28 @@
                 </div>
 
                 <div class="show-flat-host-info">
-                    <div class="show-flat-host-avatar">M</div>
+
                     <div class="show-flat-host-details">
+
+                      <div class="show-flat-host-avatar">M</div>
+                      <div class="show-flat-host-both-info">
+
                         <h4>Hébergé par <%= @flat.user.username %></h4>
                         <p>Hôte depuis 3 ans • Superhôte</p>
+                      </div>
                     </div>
                     <% unless @flat.user == current_user %>
                     <div class="show-flat-button">
                        <button data-action="click->toggle#display">Réserver</button>
-                      </div>
+                    </div>
                     <% end %>
+
                 </div>
+
             </div>
+            <div class="show-new-booking-content <%= 'd-none' unless @booking.errors.any? %>" data-toggle-target="toggElement">
+      <%= render "bookings/form", tableaudate: @tableaudate, booking: @booking, flat: @flat %>
+    </div>
         </div>
 
-
-
-  <div class="show-new-booking"><!-- ne pas toucher cette div -->
-
-
-      <%= render "bookings/form", tableaudate: @tableaudate, booking: @booking, flat: @flat %>
-    
-  </div>
+<%# -------------------------------------------------------------------BOUTON NEW FORM%>
