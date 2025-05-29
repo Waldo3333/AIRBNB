@@ -1,5 +1,6 @@
 class Flat < ApplicationRecord
   belongs_to :user
-  # Hello
+  has_one_attached :photo
   validates :title, :price, :guest, :bedroom, :description, :address, presence: true
+
 end
