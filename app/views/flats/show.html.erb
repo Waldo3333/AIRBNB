@@ -33,7 +33,7 @@
                 <div class="show-flat-host-info">
                     <div class="show-flat-host-avatar">M</div>
                     <div class="show-flat-host-details">
-                        <h4>Hébergé par <%= @flat.user %></h4>
+                        <h4>Hébergé par <%= @flat.user.username %></h4>
                         <p>Hôte depuis 3 ans • Superhôte</p>
                     </div>
                     <% unless @flat.user == current_user %>
