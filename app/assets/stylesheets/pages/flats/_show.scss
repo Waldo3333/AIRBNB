@@ -5,15 +5,18 @@
   grid-template-columns: 2fr 1fr;
   gap: 30px;
   align-items: start;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .show-flat-card {
-  background: white;
+  background: $lightblue;
+  width: 140%;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 10px 10px #fec400;
+  box-shadow: 10px 10px $darkblue;
 }
 
 .show-flat-card:hover {
