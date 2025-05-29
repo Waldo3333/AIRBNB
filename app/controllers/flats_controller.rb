@@ -13,6 +13,7 @@ class FlatsController < ApplicationController
       }
 
      end
+
   end
 
   def new
