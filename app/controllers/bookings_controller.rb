@@ -18,7 +18,14 @@
       if @booking.save
         redirect_to dashboards_path
       else
-        render "flats/show", flat: @flat ,status: :unprocessable_entity 
+        @bookingatflat = Booking.where(flat: @flat, confirmed: true)
+        @tableaudate = @bookingatflat.map do |book|
+          {
+            from: book.entry_date,
+            to: book.out_date
+          }
+        end
+        render "flats/show", locals: {tableaudate: @tableaudate, flat:@flat, booking:@booking} ,status: :unprocessable_entity
       end
     end
 

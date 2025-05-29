@@ -19,7 +19,7 @@ class FlatsController < ApplicationController
     @flat = Flat.new
   end
 
-   def show
+  def show
     @flat = Flat.find(params[:id])
     @booking = Booking.new
 
@@ -30,7 +30,6 @@ class FlatsController < ApplicationController
         to: book.out_date
       }
     end
-
   end
 
   def create

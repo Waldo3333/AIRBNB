@@ -33,8 +33,10 @@
                 <div class="show-flat-host-info">
 
                     <div class="show-flat-host-details">
+
                       <div class="show-flat-host-avatar">M</div>
                       <div class="show-flat-host-both-info">
+
                         <h4>Hébergé par <%= @flat.user.username %></h4>
                         <p>Hôte depuis 3 ans • Superhôte</p>
                       </div>
@@ -47,13 +49,10 @@
 
                 </div>
 
-
             </div>
             <div class="show-new-booking-content <%= 'd-none' unless @booking.errors.any? %>" data-toggle-target="toggElement">
-      <%= render "bookings/form", user: current_user, flat: @flat %>
+      <%= render "bookings/form", tableaudate: @tableaudate, booking: @booking, flat: @flat %>
     </div>
         </div>
 
 <%# -------------------------------------------------------------------BOUTON NEW FORM%>
-
-
