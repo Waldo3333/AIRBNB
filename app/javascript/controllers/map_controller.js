@@ -14,11 +14,9 @@ export default class extends Controller {
   connect() {
     console.log("map-controller connected");
      mapboxgl.accessToken = this.apiKeyValue
-     console.log(mapboxgl.accessToken);
-
       this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/mapbox/streets-v12"
     })
 
     this.#addMarkersToMap()
