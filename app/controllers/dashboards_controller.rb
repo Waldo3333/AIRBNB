@@ -1,7 +1,6 @@
 class DashboardsController < ApplicationController
 
   def index
-
     @user_bookings = current_user.bookings ## apart ou je vais dormir
     @flats = current_user.flats
     @user_bookings_confirmed = @user_bookings.where(confirmed: true)

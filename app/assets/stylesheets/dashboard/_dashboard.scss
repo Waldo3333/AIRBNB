@@ -1,211 +1,221 @@
 .dashboard-container {
-  color: $text;
-  margin-top: 50px;
+	color: $text;
+	margin-top: 50px;
 }
 
 .nav {
-  width: 90%;
-  justify-content: space-evenly;
+	width: 90%;
+	justify-content: space-evenly;
 }
 .dashboard-card {
-  display: flex;
-  background: white;
-  border: 3px solid #538fe4;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  box-shadow: 10px 10px #fec400;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px 30px;
+	display: flex;
+	background: white;
+	border: 3px solid #538fe4;
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: transform 0.3s ease;
+	box-shadow: 10px 10px #fec400;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px 30px;
+}
+.dashboard-profil-pic-container {
+	display: flex;
+	justify-content: center;
+}
+.dashboard-profil-pic {
+	height: 130px;
+	width: 130px;
+	border-radius: 50%;
+	object-fit: cover;
 }
 
 .dashboard-title {
-  font-size: 50px;
-  font-weight: bold;
+	font-size: 50px;
+	font-weight: bold;
 }
 
 .dashboard-title2 {
-  font-size: 35px;
-  font-weight: bold;
-  margin-bottom: 48px;
+	font-size: 35px;
+	font-weight: bold;
+	margin-bottom: 48px;
 }
 
 .dashboard-top {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 40px;
 }
 
 .dashboard-boxshadow {
-  box-shadow: 10px 10px $darkblue;
+	box-shadow: 10px 10px $darkblue;
 }
 
 /*---------------------------------------LES BOOKING----------*/
 .dashboard-booking-container {
-  display: flex;
-  margin: 10vh auto;
-  width: 90vw;
-  justify-content: space-between;
+	display: flex;
+	margin: 10vh auto;
+	width: 90vw;
+	justify-content: space-between;
 }
 
 .dashboard-booking-content {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  width: 40vw;
-  height: 40vh;
-  padding: 20px 20px;
-  background-color: $lightblue;
-  color: $text;
-  border-radius: 15px;
-  overflow: scroll;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	width: 40vw;
+	height: 40vh;
+	padding: 20px 20px;
+	background-color: $lightblue;
+	color: $text;
+	border-radius: 15px;
+	overflow: scroll;
 }
 
 .dashboard-waiting-booking-infos {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .dashboard-waiting-booking-infos-button {
-  display: flex;
-  justify-content: space-around;
-  a {
-    padding: 10px 20px;
-    color: $text;
-    text-decoration: none;
-    background-color: $myorange;
-    border-radius: 10px;
-    width: max-content;
-    height: max-content;
-    transition: ease-out 0.2s;
-  }
-  a:hover {
-    padding: 5px 10px;
-  }
+	display: flex;
+	justify-content: space-around;
+	a {
+		padding: 10px 20px;
+		color: $text;
+		text-decoration: none;
+		background-color: $myorange;
+		border-radius: 10px;
+		width: max-content;
+		height: max-content;
+		transition: ease-out 0.2s;
+	}
+	a:hover {
+		padding: 5px 10px;
+	}
 }
 /*---------------------------------------LES VISITES----------*/
 
 .dashboard-visit-container {
-  width: 90vw;
-  margin: auto;
-  a {
-    width: max-content;
-    height: max-content;
-    padding: 5px 15px;
-    background-color: $myorange;
-    border-radius: 10px;
-    color: $text;
-    text-decoration: none;
-    transition: ease-out 0.2s;
-  }
+	width: 90vw;
+	margin: auto;
+	a {
+		width: max-content;
+		height: max-content;
+		padding: 5px 15px;
+		background-color: $myorange;
+		border-radius: 10px;
+		color: $text;
+		text-decoration: none;
+		transition: ease-out 0.2s;
+	}
 
-  a:hover {
-    padding: 5px 10px;
-  }
+	a:hover {
+		padding: 5px 10px;
+	}
 }
 
 .dashboard-visit-title {
-  margin-bottom: 5vh;
+	margin-bottom: 5vh;
 }
 
 .dashboard-visit-list-container {
-  display: flex;
-  gap: 30px;
-  margin-bottom: 20px;
+	display: flex;
+	gap: 30px;
+	margin-bottom: 20px;
 }
 
 .dashboard-visit-list {
-  border-radius: 10px;
-  padding: 20px 20px;
-  width: 25vw;
-  color: $text;
-  background-color: $lightblue;
+	border-radius: 10px;
+	padding: 20px 20px;
+	width: 25vw;
+	color: $text;
+	background-color: $lightblue;
 }
 
 /*---------------------------------------LES BIENS----------*/
 
 .dashboard-user-flats-title {
-  margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .dashboard-user-flats-container {
-  width: 90vw;
-  margin: auto;
-  margin-top: 5vh;
-  gap: 5vh;
+	width: 90vw;
+	margin: auto;
+	margin-top: 5vh;
+	gap: 5vh;
 }
 
 .dashboard-user-flats-list-container {
-  width: 90vw;
-  margin: auto;
-  padding-bottom: 10px;
-  display: flex;
-  border-radius: 15px;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  gap: 30px;
+	width: 90vw;
+	margin: auto;
+	padding-bottom: 10px;
+	display: flex;
+	border-radius: 15px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+	gap: 30px;
 }
 
 .dashboard-user-flats-list {
-  width: 25vw;
-  height: 35vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  text-wrap: wrap;
-  padding: 20px 20px;
-  background-color: $lightblue;
-  color: $text;
-  border-radius: 15px;
-  flex-shrink: 0;
-  background: white;
-  border: 3px solid $darkblue;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  box-shadow: 10px 10px $myorange;
+	width: 25vw;
+	height: 35vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+	text-wrap: wrap;
+	padding: 20px 20px;
+	background-color: $lightblue;
+	color: $text;
+	border-radius: 15px;
+	flex-shrink: 0;
+	background: white;
+	border: 3px solid $darkblue;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: transform 0.3s ease;
+	box-shadow: 10px 10px $myorange;
 }
 
 .dashboard-user-flats-list-image {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
 }
 
 .dashboard-user-flats-list-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 12px;
 }
 
 /*---------------------------------------BOUTON FLAT NEW----------*/
 .dashboard-new-flat-button {
-  text-align: center;
-  align-items: center;
-  margin: 45px 0px;
+	text-align: center;
+	align-items: center;
+	margin: 45px 0px;
 
-  a {
-    width: max-content;
-    height: max-content;
-    padding: 20px 20px;
-    border-radius: 10px;
-    background-color: $white;
-    color: $text;
-    border: 3px solid $myorange;
-    text-decoration: none;
-    transition: ease-out 0.2s;
-  }
+	a {
+		width: max-content;
+		height: max-content;
+		padding: 20px 20px;
+		border-radius: 10px;
+		background-color: $white;
+		color: $text;
+		border: 3px solid $myorange;
+		text-decoration: none;
+		transition: ease-out 0.2s;
+	}
 
-  a:hover {
-    padding: 17px 17px;
-    box-shadow: 10px 10px $myorange;
-    border: 3px solid $myorange;
-  }
+	a:hover {
+		padding: 17px 17px;
+		box-shadow: 10px 10px $myorange;
+		border: 3px solid $myorange;
+	}
 }
