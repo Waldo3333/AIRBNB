@@ -19,7 +19,6 @@ class FlatsController < ApplicationController
      end
      # dans flat-controller action-index
       # si params[qurey] => flat.near avec params search et rayon(radius research)
-
   end
 
   def new
