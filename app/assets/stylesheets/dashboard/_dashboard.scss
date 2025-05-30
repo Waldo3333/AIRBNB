@@ -120,21 +120,41 @@
 .dashboard-visit-title {
   margin-bottom: 5vh;
   padding-left: 240px;
+}
 
+.dashboard-visit-mini-titre {
+  margin-left: 120px;
 }
 
 .dashboard-visit-list-container {
 	display: flex;
-	gap: 30px;
 	margin-bottom: 20px;
+  justify-content: center;
 }
 
 .dashboard-visit-list {
-	border-radius: 10px;
-	padding: 20px 20px;
-	width: 25vw;
-	color: $text;
-	background-color: $lightblue;
+  width: 100%;
+  color: #0E1848;
+  border-radius: 15px;
+  background: white;
+  border: 3px solid #538FE4;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 10px 10px #FEC400;
+}
+
+.dashboard-visit-list a {
+  border: 2px solid #FEC400;
+  border-radius: 8px;
+  padding: 6px 18px;
+  background: white;
+  color: $text;
+  text-decoration: none;
+  transition: box-shadow 0.2s;
+}
+
+.dashboard-visit-list-image {
+  border-radius: 14px;
 }
 
 /*---------------------------------------LES BIENS----------*/

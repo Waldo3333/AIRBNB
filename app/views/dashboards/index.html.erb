@@ -26,44 +26,93 @@
       </li>
     </ul>
 
+
+
+
+
     <div class="tab-content pt-5" id="tab-content">
       <div class="tab-pane active" id="icon-tabpanel-0" role="tabpanel" aria-labelledby="icon-tab-0">
+
+
+
         <div class="dashboard-visit-container">
           <div class="dashboard-visit-title">
             <h2> Vos futures visites</h2>
           </div>
         </div>
-        <div class="dashboard-visit-confirmed">
-          <p>Réservations validés (<%= @user_bookings_confirmed.count  %>)</p>
-            <div class="dashboard-visit-list-container">
-              <% @user_bookings_confirmed.each do |book| %>
-                <div class="dashboard-visit-list dashboard-boxshadow">
-                  <p><%= book.flat.title %></p>
-                  <p>Le <%= book.entry_date %></p>
-                  <p>Adresse : <%= book.flat.address %></p>
-                  <%= link_to flat_path(book.flat) do %>
-                  voir
-                  <%end%>
-                </div>
-              <% end %>
+          <div class="dashboard-visit-confirmed">
+            <div class="dashboard-visit-mini-titre">
+              <h5>Réservations validés (<%= @user_bookings_confirmed.count  %>)</h5>
             </div>
-        </div>
+              <div class="dashboard-visit-list-container">
+                <% @user_bookings_confirmed.each do |book| %>
+                  <div class="dashboard-visit-list card mb-3" style="max-width: 75vw;">
+                    <div class="row g-0">
+                    <div class="dashboard-visit-list-image col-md-3">
+                       <% if book.flat.photo.attached? %>
+                          <%= cl_image_tag book.flat.photo.key, class: "img-fluid", alt:"flat.title" %>
+                      <% end %>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title"><strong><%= book.flat.title %></strong></h5>
+                        <p class="card-text">Du <%= book.entry_date %></p>
+                        <p class="card-text">
+                        <i class="fas fa-user"></i>
+                        <%= flat.guest %> voyageur(s)
+                      </p>
+                        <p class="card-text">Au <%= book.entry_date %></p>
+                        <p class="card-text"><%= book.flat.address %></p>
+                      </div>
+                    </div>
+                      <div class="col-md-2 d-flex flex-column justify-content-between p-3">
+                        <div class="d-flex justify-content-between">
+                          <%= link_to "Voir", flat_path(book.flat)%>
+                          <%end%>
+                        </div>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
-        <div class="dashboard-visit-unconfirmed">
-          <p>Réservations en attende de validation (<%= @user_bookings_unconfirmed.count  %>)</p>
-            <div class="dashboard-visit-list-container">
-              <% @user_bookings_unconfirmed.each do |book| %>
-                <div class="dashboard-visit-list dashboard-boxshadow">
-                  <p><%= book.flat.title %></p>
-                  <p>Le <%= book.entry_date %></p>
-                  <p>Adresse : <%= book.flat.address %></p>
-                  <%= link_to flat_path(book.flat) do %>
-                  voir
-                  <%end%>
-                </div>
-              <% end %>
+          <div class="dashboard-visit-unconfirmed">
+            <div class="dashboard-visit-mini-titre">
+              <h5>Réservations en attende de validation (<%= @user_bookings_unconfirmed.count  %>)</h5>
             </div>
-        </div>
+              <div class="dashboard-visit-list-container">
+                <% @user_bookings_unconfirmed.each do |book| %>
+                  <div class="dashboard-visit-list card mb-3" style="max-width: 75vw;">
+                    <div class="row g-0">
+                    <div class="dashboard-visit-list-image col-md-3">
+                       <% if book.flat.photo.attached? %>
+                          <%= cl_image_tag book.flat.photo.key, class: "img-fluid", alt:"flat.title" %>
+                      <% end %>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title"><strong><%= book.flat.title %></strong></h5>
+                        <p class="card-text">Du <%= book.entry_date %></p>
+                        <p class="card-text">Au <%= book.entry_date %></p>
+                        <p class="card-text"><%= book.flat.address %></p>
+                      </div>
+                    </div>
+                      <div class="col-md-2 d-flex flex-column justify-content-between p-3">
+                        <div class="d-flex justify-content-between">
+                          <%= link_to "Voir", flat_path(book.flat)%>
+                          <%end%>
+                        </div>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+
+
+
+
     </div>
 
 
