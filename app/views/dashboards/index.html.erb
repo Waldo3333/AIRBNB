@@ -1,11 +1,15 @@
 
 <div class="dashboard-container">
   <div class="dashboard-card">
+    <div class="dashboard-profil-pic-container">
+     <%= cl_image_tag current_user.photo.key, class: "dashboard-profil-pic" %>
+    </div>
     <div class="dashboard-title">
       Le dashboard
     </div>
     <div class="dashboard-title2">
-      d'<%= current_user.username %>
+
+      de <%= current_user.username %>
     </div>
 
     <ul class="nav nav-tabs" role="tablist">

@@ -237,3 +237,18 @@
 	border: none;
 	border-radius: 10px;
 }
+
+.show-image {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 12px;
+	}
+}
+
+/// -- L'image est à modifié via .index_image dans flat/index.scss
