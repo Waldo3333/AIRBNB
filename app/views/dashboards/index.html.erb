@@ -74,15 +74,27 @@
           <div class="dashboard-user-flats-list-container">
             <% @flats.each do |flat| %>
               <div class="dashboard-user-flats-list dashboard-boxshadow">
-                <div class="dashboard-user-flats-list-image">
                     <div class="dashboard-user-flats-list-image">
                       <% if flat.photo.attached? %>
                           <%= cl_image_tag flat.photo.key %>
                       <% end %>
+                    </div>
+                    <div class="mesbiensinfo">
+                      <div class="mesbiensinfo-title">
+                        <p><strong><%= flat.title %></strong></p>
                       </div>
-                </div>
-                  <p><strong><%= flat.title %></strong></p>
-                  <p>Prix : <strong><%= flat.price %> €</strong></p>
+                      <div class="mesbiensinfo-reste">
+                        <p><%= flat.city %></p>
+                          <div class="detailsdescription">
+                            <i class="fas fa-user"></i>
+                            <p><%= flat.guest %> voyageur(s)</p>
+                          </div>
+                          <div class="detailsdescription">
+                            <i class="fas fa-bed"></i>
+                            <p><%= flat.bedroom %> chambre(s)</p>
+                          </div>
+                      </div>
+                    </div>
                   <div class="dashboard-waiting-booking-infos-button">
                     <%= link_to "Voir", flat_path(flat)%>
                     <%= link_to "Supprimer", flat_path(flat),

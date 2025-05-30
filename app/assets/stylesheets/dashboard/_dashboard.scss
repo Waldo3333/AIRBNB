@@ -109,6 +109,7 @@
 
 .dashboard-visit-title {
   margin-bottom: 5vh;
+  padding-left: 240px;
 }
 
 .dashboard-visit-list-container {
@@ -129,6 +130,7 @@
 
 .dashboard-user-flats-title {
   margin-bottom: 15px;
+  padding-left: 240px;
 }
 
 .dashboard-user-flats-container {
@@ -143,6 +145,8 @@
   margin: auto;
   padding-bottom: 10px;
   display: flex;
+  align-items: center;
+  flex-direction: column;
   border-radius: 15px;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -151,38 +155,36 @@
 }
 
 .dashboard-user-flats-list {
-  width: 25vw;
-  height: 35vh;
+  width: 60vw;
+  height: 20vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   overflow: hidden;
   text-wrap: wrap;
-  padding: 20px 20px;
-  background-color: $lightblue;
-  color: $text;
+  background-color: #9dd8ff;
+  color: #0e1848;
   border-radius: 15px;
   flex-shrink: 0;
   background: white;
-  border: 3px solid $darkblue;
+  border: 3px solid #538fe4;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease;
-  box-shadow: 10px 10px $myorange;
+  box-shadow: 10px 10px #fec400;
+  flex-direction: row;
 }
 
 .dashboard-user-flats-list-image {
   position: relative;
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-
-.dashboard-user-flats-list-image {
-  width: 100%;
+  width: 50%;
   height: 100%;
+  overflow: hidden;
   object-fit: cover;
   border-radius: 12px;
+}
+
+.detailsdescription {
+  display: flex;
+  flex-direction: row;
 }
 
 /*---------------------------------------BOUTON FLAT NEW----------*/
