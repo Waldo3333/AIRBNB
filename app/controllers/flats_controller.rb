@@ -2,18 +2,23 @@ class FlatsController < ApplicationController
 
   def index
     @flats = Flat.all
+
+    if params[:query]
+        @flats = Flat.where("city ILIKE ?", "%#{params[:query]}%")
+    end
+
     @city = params[:city]
     @flat = Flat.where(city: @city)
      # The `geocoded` scope filters only flats with coordinates
      @markers = @flats.geocoded.map do |flat|
-
       {
         lat: flat.latitude,
         lng: flat.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: {flat: flat})
       }
-
      end
+     # dans flat-controller action-index
+      # si params[qurey] => flat.near avec params search et rayon(radius research)
 
   end
 
@@ -33,6 +38,15 @@ class FlatsController < ApplicationController
         to: book.out_date
       }
     end
+    @markers =  [{
+        lat: @flat.latitude,
+        lng: @flat.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {flat: @flat})
+      }]
+
+      if params[:query].present?
+        @flats = @flats.where(city: params[:query])
+      end
   end
 
   def create
