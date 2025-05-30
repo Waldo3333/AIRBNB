@@ -27,7 +27,13 @@
                 </div>
 
                 <!-- Emplacement pour la carte -->
+
                 <div class="show-flat-map-container">
+                  <div class="index-map-container" style="width: 100%; "
+                    data-controller="map"
+                    data-map-markers-value="<%= @markers.to_json %>"
+                    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+                  </div>
                 </div>
 
                 <div class="show-flat-host-info">
@@ -56,5 +62,3 @@
         </div>
 
 <%# -------------------------------------------------------------------BOUTON NEW FORM%>
-
-

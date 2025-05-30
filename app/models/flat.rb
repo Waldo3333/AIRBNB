@@ -26,7 +26,7 @@ class Flat < ApplicationRecord
 
   after_validation :geocode_to_city_level, if: [:will_save_change_to_address?, :will_save_change_to_city?]
   after_validation :reverse_geocode, if: [:will_save_change_to_address?, :will_save_change_to_city?]
-  validates :title, :price, :guest, :bedroom, :description, :address, :city,  presence: true
+  validates :title, :price, :guest, :bedroom, :description, :address, presence: true
 
 
   has_one_attached :photo
