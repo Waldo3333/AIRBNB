@@ -15,20 +15,14 @@
 
 .show-flat-card {
 	width: 100%;
-	background: $lightblue;
+	background: white;
+	border: 3px solid #538fe4;
 	border-radius: 20px;
 	overflow: hidden;
-	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+	box-shadow: 10px 10px #fec400;
 	transition:
 		transform 0.3s ease,
 		box-shadow 0.3s ease;
-	box-shadow: 10px 10px $darkblue;
-}
-
-.show-flat-card:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-	box-shadow: 10px 10px #fec400;
 }
 
 .show-flat-image-container {
@@ -216,7 +210,8 @@
 	width: 100%;
 	display: block;
 	padding: 50px 50px;
-	background-color: $lightblue;
+	background-color: white;
+	color: $text;
 	border-radius: 15px;
 }
 
