@@ -19,6 +19,14 @@
 
 class Flat < ApplicationRecord
 
+  include PgSearch::Model
+
+    pg_search_scope :search_by_city,
+    against: [:city],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
   belongs_to :user
   has_many :bookings, dependent: :destroy
 
@@ -30,6 +38,7 @@ class Flat < ApplicationRecord
 
 
   has_one_attached :photo
+
 
   private
 

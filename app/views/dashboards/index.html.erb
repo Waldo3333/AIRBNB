@@ -2,9 +2,10 @@
 <div class="dashboard-container">
   <div class="dashboard-card">
     <div class="dashboard-profil-pic-container">
-       <% if current_user.photo.attached? %>
-     <%= cl_image_tag current_user.photo.key, class: "dashboard-profil-pic" %>
-     <% end %>
+
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class: "dashboard-profil-pic" %>
+      <% end %>
     </div>
     <div class="dashboard-title">
       Le dashboard

@@ -1,6 +1,6 @@
 <div class="devise-log-container">
   <h1>Bienvenue sur AirPnP</h1>
-  <h2>Sign up</h2>
+  <h2>S'enregistrer</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
@@ -15,19 +15,21 @@
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
       <%= f.input :password,
+                  label: "Mot de passe",
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { autocomplete: "nouveau mdp" } %>
       <%= f.input :password_confirmation,
+                  label: "Confirmer Mot De Passe",
                   required: true,
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { autocomplete: "nouveau mdp" } %>
       <%= f.input :photo, as: :file %>
     </div>
 
  <div class="liensdevise">
   <div class="liensutiles"><%= render "devise/shared/links" %></div>
     <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
+      <%= f.button :submit, "S'enregistrer" %>
     </div>
   <% end %>
   </div>

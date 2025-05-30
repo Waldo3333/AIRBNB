@@ -24,7 +24,8 @@ export default class extends Controller {
 
 		this.map.addControl(
 			new MapboxGeocoder({
-				accessToken: mapboxgl.accessToken,
+        container: searchbar,
+				accessToken: this.apiKeyValue,
 				mapboxgl: mapboxgl,
 			})
 		);
@@ -50,3 +51,9 @@ export default class extends Controller {
 		this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 	}
 }
+
+
+// je crée un input/ form de recherche cour search wagon
+// fetch index de flat
+// dans flat-controller action-index
+// si params[qurey] => flat.near avec params search et rayon(radius research)
