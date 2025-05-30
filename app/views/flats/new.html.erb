@@ -4,16 +4,17 @@
       <div class="bg-white rounded p-3 shadow">
         <h3>Add a new flat</h3>
         <%= simple_form_for @flat do |f| %>
-          <%= f.input :title, placeholder: 'flat, home, etc...' %>
-          <%= f.input :price %>
-          <%= f.input :guest %>
-          <%= f.input :bedroom %>
+           <%= f.input :title, label: "Nom", placeholder: 'Cabane dans les bois..' %>
+          <%= f.input :price, label: "Prix par nuit" %>
+          <%= f.input :guest, label: "Capacité d'accueil (nombre de personne)" %>
+          <%= f.input :bedroom, label: "Nombre de chambres" %>
           <%= f.input :description %>
-          <%= f.input :address ,placeholder: '36 quai des orfevres', input_html: {data: {address_autocomplete_target: "address"}, class: "d-none" },
+          <%= f.input :address, label: "Adresse (visible une fois votre bien reservé)" ,placeholder: '36 quai des orfevres', input_html: {data: {address_autocomplete_target: "address"}, class: "d-none" },
           wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
           %>
+          <%= f.input :city, label: "Adresse approximative (visible par tous)", placeholder: 'Nom de votre quartier, ville...' %>
           <%= f.input :photo, as: :file %>
-          <%= f.input :city %>
+
           <%= f.submit class: 'btn btn-primary' %>
         <% end %>
       </div>
