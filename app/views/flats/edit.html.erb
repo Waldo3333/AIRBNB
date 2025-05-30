@@ -15,7 +15,9 @@
           <%= f.input :city, label: "Adresse approximative (visible par tous)", placeholder: 'Nom de votre quartier, ville...' %>
           <%= f.input :photo, as: :file %>
 
-          <%= f.submit class: 'btn btn-primary' %>
+          <%= f.submit "Modifier", class: 'btn btn-primary' %>
+          <%= link_to "Supprimer", flat_path(@flat),
+                          data: { turbo_method: :delete, turbo_confirm: "Are you sure delete this flat?" } %>
         <% end %>
       </div>
     </div>
