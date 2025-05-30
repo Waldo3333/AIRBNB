@@ -1,3 +1,15 @@
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: flats_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
 
   <div class="index-logo">
     <%= image_tag("Airpnp1.jpg", alt: "logo") %>
@@ -5,7 +17,6 @@
 
 <div class="index-map-flat-container">
   <div class="index-map-container"
-
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -23,4 +34,3 @@
     </div>
   </div>
 </div>
-
