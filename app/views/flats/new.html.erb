@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
-        <h3>Ajouter un nouvel appartement</h3>
+        <h3>Ajouter une location</h3>
         <%= simple_form_for @flat do |f| %>
-           <%= f.input :title, label: "Nom", placeholder: 'Cabane dans les bois..' %>
+          <%= f.input :title, label: "Nom", placeholder: 'Cabane dans les bois..' %>
           <%= f.input :price, label: "Prix par nuit" %>
           <%= f.input :guest, label: "Capacité d'accueil (nombre de personne)" %>
           <%= f.input :bedroom, label: "Nombre de chambres" %>
@@ -15,7 +15,7 @@
           <%= f.input :city, label: "Adresse approximative (visible par tous)", placeholder: 'Nom de votre quartier, ville...' %>
           <%= f.input :photo, as: :file %>
 
-          <%= f.submit class: 'btn btn-primary' %>
+          <%= f.submit "Ajouter une location", class: 'btn btn-primary' %>
         <% end %>
       </div>
     </div>
