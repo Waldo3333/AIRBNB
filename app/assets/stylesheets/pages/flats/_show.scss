@@ -237,3 +237,10 @@
 	border: none;
 	border-radius: 10px;
 }
+
+.show-img-img {
+	width: 100%;
+	height: 100vh;
+	object-fit: cover; /* remplit sans déformer */
+	object-position: center;
+}

@@ -2,10 +2,10 @@
   <h2>Réservation</h2>
 
   <div class="new-booking">
-    <%= simple_form_for [flat, booking] do |f| %>
+    <%= simple_form_for [@flat, @booking] do |f| %>
       <%= f.input :guest, label: "Nombre d'invité(e)s", as: :integer %>
       <p>Choisissez vos dates</p>
-        <input type="text" id="date_range" class="form-control" data-controller="datepicker" data-datepicker-dates-value="<%= tableaudate.to_json %>">
+        <input type="text" id="date_range" class="form-control" data-controller="datepicker" data-datepicker-dates-value="<%= @tableaudate.to_json %>">
       <%= f.input :entry_date, as: :hidden %>
       <%= f.input :out_date, as: :hidden %>
       <%= f.submit "Valider", class: 'btn btn-primary new-booking-button' %>
