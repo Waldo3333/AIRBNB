@@ -71,7 +71,8 @@
 
 .index-image img {
 	width: 100%;
-	height: 100%;
+	/* height: 100%; */
+	-o-object-fit: cover;
 	object-fit: cover;
 	border-radius: 12px;
 }
@@ -174,9 +175,6 @@
 	font-size: 13px;
 }
 
-
-
-
 @media (max-width: 768px) {
 	.listings-container {
 		grid-template-columns: 1fr;
@@ -190,4 +188,16 @@
 	.card-image {
 		height: 180px;
 	}
+}
+.index-flat-serach {
+	margin-bottom: 0px;
+}
+.index-flat-serach-button {
+	background-color: $myorange;
+	color: $text;
+	border: none;
+}
+
+.index-search-bar {
+	margin-bottom: 40px;
 }
