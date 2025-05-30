@@ -48,7 +48,7 @@
                       <div class="show-flat-host-both-info">
 
                         <h4>Hébergé par <%= @flat.user.username %></h4>
-                        <p>Hôte depuis 3 ans • Superhôte</p>
+                        <p>Hôte depuis <%= @flat.user.created_at.year %>• Superhôte</p>
                       </div>
                     </div>
                     <% unless @flat.user == current_user %>
