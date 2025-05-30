@@ -2,10 +2,10 @@
 <div class="index-card">
 
   <% if flat.photo.attached? %>
-  <div class="index-image">
-    <%= cl_image_tag flat.photo.key %>
-  </div>
-<% end %>
+    <div class="index-image">
+      <%= cl_image_tag flat.photo.key %>
+    </div>
+  <% end %>
   <div class="card-content">
       <div class="card-header">
           <div class="location"><%= flat.title %></div>
