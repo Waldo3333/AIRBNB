@@ -2,7 +2,9 @@
 <div class="dashboard-container">
   <div class="dashboard-card">
     <div class="dashboard-profil-pic-container">
+       <% if current_user.photo.attached? %>
      <%= cl_image_tag current_user.photo.key, class: "dashboard-profil-pic" %>
+     <% end %>
     </div>
     <div class="dashboard-title">
       Le dashboard
@@ -77,33 +79,35 @@
           </div>
           <div class="dashboard-user-flats-list-container">
             <% @flats.each do |flat| %>
-              <div class="dashboard-user-flats-list dashboard-boxshadow">
-                    <div class="dashboard-user-flats-list-image">
-                      <% if flat.photo.attached? %>
-                          <%= cl_image_tag flat.photo.key %>
+              <div class="dashboard-flat-card card mb-3" style="max-width: 75vw;">
+                <div class="row g-0">
+                  <div class="dashboard-flat-card-image col-md-3">
+                    <% if flat.photo.attached? %>
+                          <%= cl_image_tag flat.photo.key, class: "img-fluid", alt:"flat.title" %>
                       <% end %>
-                    </div>
-                    <div class="mesbiensinfo">
-                      <div class="mesbiensinfo-title">
-                        <p><strong><%= flat.title %></strong></p>
-                      </div>
-                      <div class="mesbiensinfo-reste">
-                        <p><%= flat.city %></p>
-                          <div class="detailsdescription">
-                            <i class="fas fa-user"></i>
-                            <p><%= flat.guest %> voyageur(s)</p>
-                          </div>
-                          <div class="detailsdescription">
-                            <i class="fas fa-bed"></i>
-                            <p><%= flat.bedroom %> chambre(s)</p>
-                          </div>
-                      </div>
-                    </div>
-                  <div class="dashboard-waiting-booking-infos-button">
-                    <%= link_to "Voir", flat_path(flat)%>
-                    <%= link_to "Supprimer", flat_path(flat),
-                          data: { turbo_method: :delete, turbo_confirm: "Are you sure delete this flat?" } %>
                   </div>
+                  <div class="col-md-7">
+                    <div class="card-body">
+                      <h5 class="card-title"><strong><%= flat.title %></strong></h5>
+                      <p class="card-text"><%= flat.city %></p>
+                      <p class="card-text">
+                        <i class="fas fa-user"></i>
+                        <%= flat.guest %> voyageur(s)
+                      </p>
+                      <p class="card-text">
+                        <i class="fas fa-bed"></i>
+                        <%= flat.bedroom %> chambre(s)
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-2 d-flex flex-column justify-content-between p-3">
+                    <h5 class="text-end"><strong><%= flat.price %> €</strong></h5>
+                    <div class="dashboard-flat-card-button d-flex flex-column justify-content-between gap-3">
+                      <%= link_to "Voir", flat_path(flat) %>
+                      <%= link_to "Modifier", edit_flat_path(flat) %>
+                    </div>
+                  </div>
+                </div>
               </div>
             <% end %>
           </div>
@@ -118,28 +122,39 @@
               <h2>Bookings en attente (<%= @my_flats_bookings_unconfirmed.count  %>)</h2>
             </div>
 
-            <div class="dashboard-booking-content dashboard-boxshadow">
+            <%# <div class="dashboard-booking-content dashboard-boxshadow"> %>
               <% if @my_flats_bookings_unconfirmed.any? %>
                 <% @my_flats_bookings_unconfirmed.each do |booking| %>
-                  <div class="dashboard-waiting-booking-infos">
-                    <p>Réservation pour</p>
-                    <p><strong><%= booking.flat.title %></strong></p>
-                    <p>du <strong><%= booking.entry_date %></strong> au <strong><%= booking.out_date %></strong></p>
-                    <p>pour <strong><%= booking.guest %></strong> invité(s)</p>
-                    <p>par <strong><%= booking.user.username %></strong></p>
-                  </div>
+                  <div class="dashboard-flat-card card mb-3" style="max-width: 40vw;">
+                    <div class="row g-0 flex-nowrap">
+                      <div class="dashboard-flat-card-image col-md-3">
+                        <% if booking.flat.photo.attached? %>
+                          <%= cl_image_tag booking.flat.photo.key, class: "img-fluid", alt:"flat.title" %>
+                        <% end %>
+                      </div>
+                      <div class="col-md-6 ms-1">
+                        <p class="card-p">Réservation pour</p>
+                        <p class="card-p"><strong><%= booking.flat.title %></strong></p>
+                        <p class="card-p">du <strong><%= booking.entry_date %></strong> au <strong><%= booking.out_date %></strong></p>
+                        <p class="card-p">pour <strong><%= booking.guest %></strong> invité(s)</p>
+                        <p class="card-p">par <strong><%= booking.user.username %></strong></p>
+                      <div class="card-body">
 
-                  <div class="dashboard-waiting-booking-infos-button">
-                    <%= link_to "Accepter", flat_booking_path(booking.flat, booking, booking: { confirmed: true }),
-                          data: { turbo_method: :patch, turbo_confirm: "Confirmer cette réservation." } %>
-                    <%= link_to "Refuser", flat_booking_path(booking.flat, booking),
-                          data: { turbo_method: :delete, turbo_confirm: "Supprimer cette réservation ?" } %>
+                        </div>
+                      </div>
+                      <div class="col-md-3 d-flex flex-column gap-3 p-3 dashboard-flat-card-button">
+                        <%= link_to "Accepter", flat_booking_path(booking.flat, booking, booking: { confirmed: true }),
+                            data: { turbo_method: :patch, turbo_confirm: "Confirmer cette réservation." } %>
+                        <%= link_to "Refuser", flat_booking_path(booking.flat, booking),
+                            data: { turbo_method: :delete, turbo_confirm: "Supprimer cette réservation ?" } %>
+                      </div>
+                    </div>
                   </div>
                 <% end %>
               <% else %>
                 <p><em>Aucune demande en attente.</em></p>
               <% end %>
-            </div>
+            <%# </div> %>
           </div>
 
           <div class="dashboard-booking-waiting">
@@ -147,26 +162,34 @@
               <h2>Historique (<%= @my_flats_bookings_confirmed.count  %>)</h2>
             </div>
 
-            <div class="dashboard-booking-content dashboard-boxshadow">
               <% if @my_flats_bookings_confirmed.any? %>
                 <% @my_flats_bookings_confirmed.each do |booking| %>
-                  <div class="dashboard-waiting-booking-infos ">
-                    <p>Réservation pour</p>
-                    <p><strong><%= booking.flat.title %></strong></p>
-                    <p>du <strong><%= booking.entry_date %></strong> au <strong><%= booking.out_date %></strong></p>
-                    <p>pour <strong><%= booking.guest %></strong> invité(s)</p>
-                    <p>par <strong><%= booking.user.username %></strong></p>
-                  </div>
+                  <div class="dashboard-flat-card card mb-3" style="max-width: 40vw;">
+                    <div class="row g-0 flex-nowrap">
+                      <div class="dashboard-flat-card-image col-md-3">
+                        <% if booking.flat.photo.attached? %>
+                          <%= cl_image_tag booking.flat.photo.key, class: "img-fluid", alt:"flat.title" %>
+                        <% end %>
+                      </div>
+                      <div class="col-md-5 ms-1">
+                        <p class="card-p">Réservation pour</p>
+                        <p class="card-p"><strong><%= booking.flat.title %></strong></p>
+                        <p class="card-p">du <strong><%= booking.entry_date %></strong> au <strong><%= booking.out_date %></strong></p>
+                        <p class="card-p">pour <strong><%= booking.guest %></strong> invité(s)</p>
+                        <p class="card-p">par <strong><%= booking.user.username %></strong></p>
+                      <div class="card-body">
 
-                  <div class="dashboard-waiting-booking-infos-button">
-                    <%= link_to "Supprimer", flat_booking_path(booking.flat, booking),
-                          data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" } %>
+                        </div>
+                      </div>
+                      <div class="col-md-4 d-flex flex-column gap-3 p-3 flex-end dashboard-flat-card-button">
+                        <h5 class="text-end"><strong><%= booking.flat.price %> €</strong></h5>
+                      </div>
+                    </div>
                   </div>
                 <% end %>
               <% else %>
                 <p><em>Aucun historique à afficher.</em></p>
               <% end %>
-            </div>
           </div>
         </div>
       </div>
