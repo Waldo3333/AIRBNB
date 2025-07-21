@@ -32,8 +32,11 @@ class Flat < ApplicationRecord
 
   reverse_geocoded_by :latitude, :longitude
 
-  after_validation :geocode_to_city_level, if: [:will_save_change_to_address?, :will_save_change_to_city?]
-  after_validation :reverse_geocode, if: [:will_save_change_to_address?, :will_save_change_to_city?]
+  after_validation :geocode_to_city_level,
+                    if: [:will_save_change_to_address?, :will_save_change_to_city?]
+  after_validation :reverse_geocode,
+                    if: [:will_save_change_to_address?, :will_save_change_to_city?]
+
   validates :title, :price, :guest, :bedroom, :description, :address,  presence: true
 
 
